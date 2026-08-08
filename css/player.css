@@ -1,1 +1,365 @@
+/* =========================================================
+   BRICE MUSIC
+   Premium Music Player
+   ========================================================= */
 
+
+/* =========================
+   PLAYER GLOW
+========================= */
+
+.music-player::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: -1px;
+
+    right: 0;
+
+    left: 0;
+
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(139,92,246,0.7),
+            rgba(56,189,248,0.5),
+            transparent
+        );
+
+    opacity: 0.7;
+
+}
+
+
+/* =========================
+   PLAYER SONG
+========================= */
+
+.player-song {
+
+    position: relative;
+
+}
+
+
+.player-cover {
+
+    position: relative;
+
+    box-shadow:
+        0 8px 25px rgba(0,0,0,0.35);
+
+}
+
+
+.player-cover::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    border-radius: inherit;
+
+    box-shadow:
+        inset 0 0 0 1px rgba(255,255,255,0.08);
+
+    pointer-events: none;
+
+}
+
+
+/* =========================
+   PLAYING ANIMATION
+========================= */
+
+.music-player.is-playing
+.player-cover img {
+
+    animation:
+        playerCoverPulse 4s ease-in-out infinite;
+
+}
+
+
+@keyframes playerCoverPulse {
+
+    0%,
+    100% {
+
+        transform: scale(1);
+
+    }
+
+    50% {
+
+        transform: scale(1.035);
+
+    }
+
+}
+
+
+/* =========================
+   MAIN PLAY BUTTON
+========================= */
+
+.player-controls
+.main-play {
+
+    position: relative;
+
+    overflow: hidden;
+
+}
+
+
+.player-controls
+.main-play::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,255,255,0.18),
+            transparent 65%
+        );
+
+    opacity: 0;
+
+    transition:
+        opacity 0.3s ease;
+
+}
+
+
+.player-controls
+.main-play:hover::after {
+
+    opacity: 1;
+
+}
+
+
+.player-controls
+.main-play:active {
+
+    transform: scale(0.92);
+
+}
+
+
+/* =========================
+   CONTROL BUTTONS
+========================= */
+
+.player-controls button {
+
+    position: relative;
+
+}
+
+
+.player-controls button:active {
+
+    transform: scale(0.9);
+
+}
+
+
+/* =========================
+   PROGRESS BAR
+========================= */
+
+.progress-bar {
+
+    overflow: visible;
+
+}
+
+
+.progress-bar::after {
+
+    content: "";
+
+    position: absolute;
+
+    top: 50%;
+
+    left: 0;
+
+    width: 11px;
+
+    height: 11px;
+
+    border-radius: 50%;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 0 10px rgba(139,92,246,0.9),
+        0 0 20px rgba(139,92,246,0.35);
+
+    transform:
+        translate(
+            calc(var(--progress, 0%) - 50%),
+            -50%
+        );
+
+    opacity: 0;
+
+    transition:
+        opacity 0.2s ease;
+
+}
+
+
+.progress-bar:hover::after {
+
+    opacity: 1;
+
+}
+
+
+/* =========================
+   PROGRESS ANIMATION
+========================= */
+
+.progress {
+
+    position: relative;
+
+    overflow: hidden;
+
+}
+
+
+.progress::after {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+
+    right: 0;
+
+    bottom: 0;
+
+    width: 70px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,0.25),
+            transparent
+        );
+
+    animation:
+        progressShine 2.8s linear infinite;
+
+}
+
+
+@keyframes progressShine {
+
+    from {
+
+        transform: translateX(100%);
+
+    }
+
+    to {
+
+        transform: translateX(-180%);
+
+    }
+
+}
+
+
+/* =========================
+   PLAYER HOVER
+========================= */
+
+.music-player {
+
+    transition:
+        box-shadow 0.4s ease;
+
+}
+
+
+.music-player:hover {
+
+    box-shadow:
+        0 -18px 60px rgba(0,0,0,0.55);
+
+}
+
+
+/* =========================
+   PLAYER MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+    .music-player {
+
+        background:
+            rgba(9,9,13,0.97);
+
+    }
+
+    .player-cover {
+
+        box-shadow:
+            0 5px 18px rgba(0,0,0,0.4);
+
+    }
+
+    .player-controls
+    .main-play {
+
+        box-shadow:
+            0 6px 22px rgba(124,58,237,0.35);
+
+    }
+
+}
+
+
+/* =========================
+   REDUCED MOTION
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .music-player.is-playing
+    .player-cover img {
+
+        animation: none;
+
+    }
+
+    .progress::after {
+
+        animation: none;
+
+    }
+
+}
