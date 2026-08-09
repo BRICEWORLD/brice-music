@@ -3,14 +3,104 @@
 // =======================================
 
 
-const musicCards =
-document.querySelectorAll(".music-card");
+
+// =========================
+// CREATE LATEST MUSIC CARDS
+// =========================
+
+const latestMusic =
+document.getElementById("latest-music");
 
 
 
-const playButtons =
-document.querySelectorAll(".play-button");
+function createMusicCards(){
 
+
+    if(!latestMusic) return;
+
+
+
+    latestMusic.innerHTML = "";
+
+
+
+    const songs =
+    musicDatabase.songs;
+
+
+
+    songs.forEach(song => {
+
+
+
+        const card = document.createElement("article");
+
+        card.className = "music-card";
+
+
+
+        card.innerHTML = `
+
+            <div class="music-cover">
+
+                <img
+                src="${song.cover}"
+                alt="${song.title}">
+
+
+                <button
+                class="play-button"
+                type="button">
+
+                ▶
+
+                </button>
+
+
+            </div>
+
+
+            <div class="music-info">
+
+
+                <h3>
+                ${song.title}
+                </h3>
+
+
+                <p>
+                ${song.artistId}
+                </p>
+
+
+            </div>
+
+        `;
+
+
+
+        latestMusic.appendChild(card);
+
+
+
+    });
+
+
+
+}
+
+
+
+// اجرا
+
+createMusicCards();
+
+
+
+
+// =========================
+// PLAY BUTTON SYSTEM
+// =========================
 
 
 function playSelectedSong(song){
@@ -24,48 +114,49 @@ function playSelectedSong(song){
 
     }
 
+
 }
 
 
 
-
-playButtons.forEach((button,index)=>{
-
-
-    button.addEventListener(
-        "click",
-        ()=>{
+document.addEventListener(
+"click",
+function(e){
 
 
-            const song =
-            musicLibrary[index];
+
+    if(
+    e.target.classList.contains("play-button")
+    ){
 
 
-            if(song){
+        const cards =
+        document.querySelectorAll(".music-card");
 
-                playSelectedSong(song);
 
-            }
+        const card =
+        e.target.closest(".music-card");
 
+
+        const index =
+        [...cards].indexOf(card);
+
+
+
+        const song =
+        musicDatabase.songs[index];
+
+
+
+        if(song){
+
+            playSelectedSong(song);
 
         }
-    );
+
+
+    }
+
 
 
 });
-
-// =======================================
-// BRICE MUSIC DATABASE TEST
-// =======================================
-
-console.log("BRICE MUSIC Database:", musicDatabase);
-
-console.log("Categories:", musicDatabase.categories.length);
-
-console.log("Artists:", musicDatabase.artists.length);
-
-console.log("Albums:", musicDatabase.albums.length);
-
-console.log("Songs:", musicDatabase.songs.length);
-
-console.log("Playlists:", musicDatabase.playlists.length);
