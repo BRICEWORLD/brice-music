@@ -1620,3 +1620,204 @@ a {
     }
 
 }
+
+/* =======================================
+   BRICE MUSIC FOOTER
+======================================= */
+
+
+.site-footer {
+
+    margin-top: 80px;
+
+    padding-top: 70px;
+
+    background:
+    linear-gradient(
+        180deg,
+        #11111a,
+        #07070b
+    );
+
+    border-top:
+    1px solid var(--border);
+
+}
+
+
+
+.footer-grid {
+
+    display:grid;
+
+    grid-template-columns:
+    1.5fr 1fr 1fr 1fr;
+
+    gap:40px;
+
+    padding-bottom:50px;
+
+}
+
+
+
+.footer-brand h2 {
+
+    font-size:30px;
+
+    font-weight:800;
+
+    letter-spacing:1px;
+
+    margin-bottom:15px;
+
+    background:
+    linear-gradient(
+        90deg,
+        #ffffff,
+        #8b5cf6
+    );
+
+    -webkit-background-clip:text;
+
+    color:transparent;
+
+}
+
+
+
+.footer-brand p {
+
+    color:
+    var(--text-light);
+
+    line-height:2;
+
+    font-size:14px;
+
+    max-width:320px;
+
+}
+
+
+
+.footer-links h3,
+.footer-social h3 {
+
+    font-size:17px;
+
+    margin-bottom:20px;
+
+}
+
+
+
+.footer-links a,
+.footer-social a {
+
+    display:block;
+
+    color:
+    var(--text-light);
+
+    margin-bottom:12px;
+
+    font-size:14px;
+
+    transition:.3s;
+
+}
+
+
+
+.footer-links a:hover,
+.footer-social a:hover {
+
+    color:white;
+
+    transform:translateX(-5px);
+
+}
+
+
+
+.footer-bottom {
+
+    padding:20px 0;
+
+    text-align:center;
+
+    border-top:
+    1px solid var(--border);
+
+}
+
+
+
+.footer-bottom p {
+
+    color:
+    var(--text-light);
+
+    font-size:13px;
+
+}
+
+
+
+/* =========================
+   FOOTER MOBILE
+========================= */
+
+
+@media(max-width:768px){
+
+
+.footer-grid {
+
+    grid-template-columns:
+    1fr 1fr;
+
+    gap:30px;
+
+}
+
+
+.footer-brand {
+
+    grid-column:
+    1 / -1;
+
+}
+
+
+}
+
+
+
+@media(max-width:450px){
+
+
+.footer-grid {
+
+    grid-template-columns:
+    1fr;
+
+}
+
+
+.footer-brand {
+
+    text-align:center;
+
+}
+
+
+.footer-brand p {
+
+    margin:auto;
+
+}
+
+
+}
