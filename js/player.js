@@ -118,24 +118,18 @@ if(playButton){
 
 
 
-// نمونه آهنگ تستی
-// بعداً از دیتابیس موزیک می‌گیریم
+// آماده سازی اولیه پلیر
 
-const demoSong = {
+if(typeof musicDatabase !== "undefined"){
 
-    title:"اولین آهنگ BRICE",
-
-    artist:"نام خواننده",
-
-    cover:
-    "images/music/music-01.jpg",
-
-    file:
-    "audio/demo.mp3"
-
-};
+    const firstSong =
+    musicDatabase.songs[0];
 
 
-// آماده سازی آهنگ
+    if(firstSong){
 
-loadSong(demoSong);
+        loadSong(firstSong);
+
+    }
+
+}
