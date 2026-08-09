@@ -193,6 +193,56 @@ const musicDatabase = {
        PLAYLISTS
     ========================= */
 
-    playlists: []
+    playlists: [
+
+    {
+        id: "featured",
+
+        title: "منتخب BRICE MUSIC",
+
+        slug: "featured",
+
+        description: "منتخبی از بهترین آهنگ‌های BRICE MUSIC",
+
+        cover: "images/playlists/featured.jpg",
+
+        songIds: [],
+
+        isPublic: true
+    },
+
+    {
+        id: "popular",
+
+        title: "محبوب‌ترین‌ها",
+
+        slug: "popular",
+
+        description: "محبوب‌ترین آهنگ‌های BRICE MUSIC",
+
+        cover: "images/playlists/popular.jpg",
+
+        songIds: [],
+
+        isPublic: true
+    },
+
+    {
+        id: "latest",
+
+        title: "جدیدترین آهنگ‌ها",
+
+        slug: "latest",
+
+        description: "جدیدترین آهنگ‌های اضافه‌شده به BRICE MUSIC",
+
+        cover: "images/playlists/latest.jpg",
+
+        songIds: [],
+
+        isPublic: true
+    }
+
+]
 
 };
