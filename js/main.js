@@ -53,3 +53,19 @@ playButtons.forEach((button,index)=>{
 
 
 });
+
+// =======================================
+// BRICE MUSIC DATABASE TEST
+// =======================================
+
+console.log("BRICE MUSIC Database:", musicDatabase);
+
+console.log("Categories:", musicDatabase.categories.length);
+
+console.log("Artists:", musicDatabase.artists.length);
+
+console.log("Albums:", musicDatabase.albums.length);
+
+console.log("Songs:", musicDatabase.songs.length);
+
+console.log("Playlists:", musicDatabase.playlists.length);
