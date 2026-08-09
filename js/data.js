@@ -102,7 +102,27 @@ const musicDatabase = {
        ARTISTS
     ========================= */
 
-    artists: [],
+    artists: [
+
+    {
+        id: "sample-artist",
+
+        name: "نام خواننده",
+
+        slug: "sample-artist",
+
+        image: "images/artists/sample-artist.jpg",
+
+        bio: "",
+
+        country: "Iran",
+
+        genre: "pop",
+
+        isFeatured: false
+    }
+
+],
 
 
     /* =========================
