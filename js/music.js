@@ -1,96 +1,77 @@
 // =======================================
-// BRICE MUSIC DATABASE
+// BRICE MUSIC
+// Music System
 // =======================================
 
 
-const musicLibrary = [
+// گرفتن همه آهنگ‌ها
+
+function getAllSongs() {
+
+    return musicDatabase.songs;
+
+}
 
 
-    {
-        id: 1,
+// گرفتن آهنگ با ID
 
-        title:
-        "اولین آهنگ",
+function getSong(id) {
 
-        artist:
-        "نام خواننده",
-
-        category:
-        "پاپ",
-
-        cover:
-        "images/music/music-01.jpg",
-
-        file:
-        "audio/song-01.mp3",
-
-        duration:
-        "03:45"
-
-    },
-
-
-
-    {
-        id: 2,
-
-        title:
-        "آهنگ دوم",
-
-        artist:
-        "نام خواننده",
-
-        category:
-        "غمگین",
-
-        cover:
-        "images/music/music-02.jpg",
-
-        file:
-        "audio/song-02.mp3",
-
-        duration:
-        "04:12"
-
-    },
-
-
-
-    {
-        id: 3,
-
-        title:
-        "آهنگ سوم",
-
-        artist:
-        "نام خواننده",
-
-        category:
-        "انگیزشی",
-
-        cover:
-        "images/music/music-03.jpg",
-
-        file:
-        "audio/song-03.mp3",
-
-        duration:
-        "03:28"
-
-    }
-
-
-
-];
-
-
-
-// گرفتن آهنگ با آیدی
-
-function getSong(id){
-
-    return musicLibrary.find(
+    return musicDatabase.songs.find(
         song => song.id === id
     );
+
+}
+
+
+// گرفتن آهنگ‌ها بر اساس دسته‌بندی
+
+function getSongsByCategory(category) {
+
+    return musicDatabase.songs.filter(
+        song => song.category === category
+    );
+
+}
+
+
+// گرفتن آهنگ‌های یک خواننده
+
+function getSongsByArtist(artistId) {
+
+    return musicDatabase.songs.filter(
+        song => song.artistId === artistId
+    );
+
+}
+
+
+// گرفتن آهنگ‌های یک آلبوم
+
+function getSongsByAlbum(albumId) {
+
+    return musicDatabase.songs.filter(
+        song => song.albumId === albumId
+    );
+
+}
+
+
+// آهنگ‌های محبوب
+
+function getPopularSongs() {
+
+    return [...musicDatabase.songs]
+        .sort((a, b) => b.views - a.views);
+
+}
+
+
+// آهنگ‌های جدید
+
+function getLatestSongs() {
+
+    return [...musicDatabase.songs]
+        .sort((a, b) => b.date - a.date);
 
 }
