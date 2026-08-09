@@ -116,7 +116,35 @@ const musicDatabase = {
        SONGS
     ========================= */
 
-    songs: [],
+    songs: [
+
+    {
+        id: 1,
+
+        title: "نمونه آهنگ",
+
+        artistId: "sample-artist",
+
+        albumId: "sample-album",
+
+        category: "pop",
+
+        cover: "images/music/sample.jpg",
+
+        audio: "audio/sample.mp3",
+
+        duration: "03:45",
+
+        date: "2026-01-01",
+
+        views: 0,
+
+        isPopular: false,
+
+        isFeatured: false
+    }
+
+],
 
 
     /* =========================
