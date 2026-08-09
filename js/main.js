@@ -69,8 +69,8 @@ function createMusicCards(){
 
 
                 <p>
-                ${song.artistId}
-                </p>
+${getArtistName(song.artistId)}
+</p>
 
 
             </div>
@@ -90,7 +90,28 @@ function createMusicCards(){
 }
 
 
+// =========================
+// GET ARTIST NAME
+// =========================
 
+function getArtistName(id){
+
+    const artist =
+    musicDatabase.artists.find(
+        artist => artist.id === id
+    );
+
+
+    if(artist){
+
+        return artist.name;
+
+    }
+
+
+    return "نام خواننده";
+
+}
 // اجرا
 
 createMusicCards();
