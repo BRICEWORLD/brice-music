@@ -129,7 +129,29 @@ const musicDatabase = {
        ALBUMS
     ========================= */
 
-    albums: [],
+    albums: [
+
+    {
+        id: "sample-album",
+
+        title: "نام آلبوم",
+
+        slug: "sample-album",
+
+        artistId: "sample-artist",
+
+        cover: "images/albums/sample-album.jpg",
+
+        year: 2026,
+
+        description: "",
+
+        genre: "pop",
+
+        isFeatured: false
+    }
+
+],
 
 
     /* =========================
