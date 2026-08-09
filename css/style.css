@@ -331,12 +331,11 @@ a {
 /* =========================
    HERO
 ========================= */
-
 .hero {
 
     position: relative;
 
-    min-height: 520px;
+    min-height: 560px;
 
     display: flex;
 
@@ -344,34 +343,35 @@ a {
 
     overflow: hidden;
 
+    background:
+        linear-gradient(
+            90deg,
+            rgba(5,5,9,0.98) 0%,
+            rgba(5,5,9,0.82) 38%,
+            rgba(5,5,9,0.35) 70%,
+            rgba(5,5,9,0.55) 100%
+        ),
+        url("../images/hero.jpg") center center / cover no-repeat;
+
     border-bottom:
         1px solid var(--border);
 
 }
-
-
 .hero::before {
 
     content: "";
 
     position: absolute;
 
-    width: 500px;
-
-    height: 500px;
-
-    top: -220px;
-
-    right: -120px;
+    inset: 0;
 
     background:
-        radial-gradient(
-            circle,
-            rgba(139,92,246,0.20),
-            transparent 68%
+        linear-gradient(
+            180deg,
+            rgba(7,7,10,0.15),
+            transparent 45%,
+            rgba(7,7,10,0.75)
         );
-
-    filter: blur(10px);
 
     pointer-events: none;
 
@@ -384,25 +384,26 @@ a {
 
     position: absolute;
 
-    width: 420px;
+    width: 500px;
 
-    height: 420px;
+    height: 500px;
 
-    bottom: -250px;
+    right: 30%;
 
-    left: -100px;
+    top: 10%;
 
     background:
         radial-gradient(
             circle,
-            rgba(56,189,248,0.10),
+            rgba(139,92,246,0.16),
             transparent 68%
         );
+
+    filter: blur(35px);
 
     pointer-events: none;
 
 }
-
 
 .hero-content {
 
