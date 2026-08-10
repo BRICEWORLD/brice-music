@@ -309,10 +309,10 @@ songs: [
 ],
 
     /* =========================
-       PLAYLISTS
-    ========================= */
+   PLAYLISTS
+========================= */
 
-    playlists: [
+playlists: [
 
     {
         id: "featured",
@@ -325,10 +325,11 @@ songs: [
 
         cover: "images/playlists/featured.jpg",
 
-        songIds: [],
+        songIds: [1],
 
         isPublic: true
     },
+
 
     {
         id: "popular",
@@ -341,10 +342,11 @@ songs: [
 
         cover: "images/playlists/popular.jpg",
 
-        songIds: [],
+        songIds: [1],
 
         isPublic: true
     },
+
 
     {
         id: "latest",
@@ -357,7 +359,7 @@ songs: [
 
         cover: "images/playlists/latest.jpg",
 
-        songIds: [],
+        songIds: [1],
 
         isPublic: true
     }
