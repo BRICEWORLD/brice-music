@@ -493,8 +493,7 @@ albums: [
 ],
     
 
-
-    /* =========================
+/* =========================
    SONGS
 ========================= */
 
@@ -503,23 +502,23 @@ songs: [
     {
         id: 1,
 
-        title: "نمونه آهنگ",
+        title: "بهت قول میدم",
 
-        artistId: "sample-artist",
+        artistId: "mohsen-yeganeh",
 
-        albumId: "sample-album",
+        albumId: "album-mohsen-yeganeh",
 
         category: "pop",
 
-        cover: "images/music/music-01.jpg",
+        cover: "images/music/behet-ghol-midam.jpg",
 
-        audio: "audio/sample.mp3",
+        audio: "audio/behet-ghol-midam.mp3",
 
-        duration: "03:45",
+        duration: "00:00",
 
-        date: "2026-01-01",
+        date: "2026-08-09",
 
-        views: 1000,
+        views: 100000,
 
         isPopular: true,
 
@@ -527,7 +526,7 @@ songs: [
     }
 
 ],
-
+    
     /* =========================
    PLAYLISTS
 ========================= */
