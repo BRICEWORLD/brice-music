@@ -45,7 +45,10 @@ function loadSong(song){
 
     songTitle.textContent = song.title;
 
-    artistName.textContent = song.artist;
+    artistName.textContent =
+    typeof getArtistName === "function"
+        ? getArtistName(song.artistId)
+        : "نام خواننده";
 
 }
 
