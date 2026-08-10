@@ -183,10 +183,10 @@ artists: [
 
 
     /* =========================
-       ALBUMS
-    ========================= */
+   ALBUMS
+========================= */
 
-    albums: [
+albums: [
 
     {
         id: "sample-album",
@@ -201,9 +201,72 @@ artists: [
 
         year: 2026,
 
+        description: "معرفی کوتاه آلبوم",
+
+        genre: "pop",
+
+        isFeatured: true
+    },
+
+
+    {
+        id: "album-2",
+
+        title: "آلبوم دوم",
+
+        slug: "album-2",
+
+        artistId: "artist-2",
+
+        cover: "images/albums/sample-album.jpg",
+
+        year: 2026,
+
         description: "",
 
         genre: "pop",
+
+        isFeatured: false
+    },
+
+
+    {
+        id: "album-3",
+
+        title: "آلبوم سوم",
+
+        slug: "album-3",
+
+        artistId: "artist-3",
+
+        cover: "images/albums/sample-album.jpg",
+
+        year: 2026,
+
+        description: "",
+
+        genre: "rap",
+
+        isFeatured: false
+    },
+
+
+    {
+        id: "album-4",
+
+        title: "آلبوم چهارم",
+
+        slug: "album-4",
+
+        artistId: "artist-4",
+
+        cover: "images/albums/sample-album.jpg",
+
+        year: 2026,
+
+        description: "",
+
+        genre: "traditional",
 
         isFeatured: false
     }
