@@ -389,7 +389,45 @@ function renderPopularMusic() {
 
 }
 
+// =======================================
+// RENDER LATEST MUSIC
+// =======================================
 
+function renderLatestMusic() {
+
+    const latestList =
+        document.getElementById("latest-music");
+
+
+    if (!latestList) {
+
+        return;
+
+    }
+
+
+    latestList.innerHTML = "";
+
+
+    const latestSongs =
+        getLatestSongs();
+
+
+    latestSongs
+        .slice(0, 4)
+        .forEach(
+            song => {
+
+                const card =
+                    createMusicCard(song);
+
+
+                latestList.appendChild(card);
+
+            }
+        );
+
+}
 // =======================================
 // START MUSIC SYSTEM
 // =======================================
@@ -401,6 +439,8 @@ document.addEventListener(
         renderMusicList();
 
         renderPopularMusic();
+
+        renderLatestMusic();
 
     }
 );
