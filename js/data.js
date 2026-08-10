@@ -367,3 +367,188 @@ playlists: [
 ]
 
 };
+
+// =======================================
+// BRICE MUSIC DATABASE HELPERS
+// =======================================
+
+
+// =========================
+// GET SONG
+// =========================
+
+function getSongById(id){
+
+    return musicDatabase.songs.find(
+        song => song.id === id
+    );
+
+}
+
+
+// =========================
+// GET ARTIST
+// =========================
+
+function getArtistById(id){
+
+    return musicDatabase.artists.find(
+        artist => artist.id === id
+    );
+
+}
+
+
+// =========================
+// GET ALBUM
+// =========================
+
+function getAlbumById(id){
+
+    return musicDatabase.albums.find(
+        album => album.id === id
+    );
+
+}
+
+
+// =========================
+// GET CATEGORY
+// =========================
+
+function getCategoryById(id){
+
+    return musicDatabase.categories.find(
+        category => category.id === id
+    );
+
+}
+
+
+// =========================
+// GET SONG ARTIST
+// =========================
+
+function getSongArtist(song){
+
+    if(!song) return null;
+
+    return getArtistById(
+        song.artistId
+    );
+
+}
+
+
+// =========================
+// GET SONG ALBUM
+// =========================
+
+function getSongAlbum(song){
+
+    if(!song) return null;
+
+    return getAlbumById(
+        song.albumId
+    );
+
+}
+
+
+// =========================
+// GET SONG CATEGORY
+// =========================
+
+function getSongCategory(song){
+
+    if(!song) return null;
+
+    return getCategoryById(
+        song.category
+    );
+
+}
+
+
+// =========================
+// GET POPULAR SONGS
+// =========================
+
+function getPopularSongs(){
+
+    return musicDatabase.songs.filter(
+        song => song.isPopular === true
+    );
+
+}
+
+
+// =========================
+// GET FEATURED SONGS
+// =========================
+
+function getFeaturedSongs(){
+
+    return musicDatabase.songs.filter(
+        song => song.isFeatured === true
+    );
+
+}
+
+
+// =========================
+// GET LATEST SONGS
+// =========================
+
+function getLatestSongs(){
+
+    return [...musicDatabase.songs]
+        .sort(
+            (a, b) =>
+                new Date(b.date) -
+                new Date(a.date)
+        );
+
+}
+
+
+// =========================
+// GET SONGS BY CATEGORY
+// =========================
+
+function getSongsByCategory(categoryId){
+
+    return musicDatabase.songs.filter(
+        song =>
+            song.category === categoryId
+    );
+
+}
+
+
+// =========================
+// GET SONGS BY ARTIST
+// =========================
+
+function getSongsByArtist(artistId){
+
+    return musicDatabase.songs.filter(
+        song =>
+            song.artistId === artistId
+    );
+
+}
+
+
+// =========================
+// GET SONGS BY ALBUM
+// =========================
+
+function getSongsByAlbum(albumId){
+
+    return musicDatabase.songs.filter(
+        song =>
+            song.albumId === albumId
+    );
+
+}
