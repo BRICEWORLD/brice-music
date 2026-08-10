@@ -99,85 +99,179 @@ const musicDatabase = {
 
 
     /* =========================
-   ARTISTS
+       ARTISTS
 ========================= */
 
 artists: [
 
-    {
-        id: "sample-artist",
+{
+    id: "homayoun-shajarian",
 
-        name: "نام خواننده",
+    name: "همایون شجریان",
 
-        slug: "sample-artist",
+    slug: "homayoun-shajarian",
 
-        image: "images/artists/sample-artist.jpg",
+    image: "images/artists/homayoun-shajarian.jpg",
 
-        bio: "معرفی خواننده",
+    genre: "traditional",
 
-        country: "Iran",
+    description: "خواننده موسیقی سنتی و تلفیقی ایران",
 
-        genre: "pop",
-
-        isFeatured: true
-    },
+    isPopular: true
+},
 
 
-    {
-        id: "artist-2",
+{
+    id: "sirvan-khosravi",
 
-        name: "خواننده دوم",
+    name: "سیروان خسروی",
 
-        slug: "artist-2",
+    slug: "sirvan-khosravi",
 
-        image: "images/artists/sample-artist.jpg",
+    image: "images/artists/sirvan-khosravi.jpg",
 
-        bio: "",
+    genre: "pop",
 
-        country: "Iran",
+    description: "خواننده و آهنگساز سبک پاپ",
 
-        genre: "pop",
-
-        isFeatured: false
-    },
+    isPopular: true
+},
 
 
-    {
-        id: "artist-3",
+{
+    id: "shayan-yousefi",
 
-        name: "خواننده سوم",
+    name: "شایان یوسفی",
 
-        slug: "artist-3",
+    slug: "shayan-yousefi",
 
-        image: "images/artists/sample-artist.jpg",
+    image: "images/artists/shayan-yousefi.jpg",
 
-        bio: "",
+    genre: "pop",
 
-        country: "Iran",
+    description: "خواننده موسیقی پاپ",
 
-        genre: "rap",
-
-        isFeatured: false
-    },
+    isPopular: true
+},
 
 
-    {
-        id: "artist-4",
+{
+    id: "reza-sadeghi",
 
-        name: "خواننده چهارم",
+    name: "رضا صادقی",
 
-        slug: "artist-4",
+    slug: "reza-sadeghi",
 
-        image: "images/artists/sample-artist.jpg",
+    image: "images/artists/reza-sadeghi.jpg",
 
-        bio: "",
+    genre: "pop",
 
-        country: "Iran",
+    description: "خواننده و ترانه‌سرای ایرانی",
 
-        genre: "traditional",
+    isPopular: true
+},
 
-        isFeatured: false
-    }
+
+{
+    id: "ali-yasini",
+
+    name: "علی یاسینی",
+
+    slug: "ali-yasini",
+
+    image: "images/artists/ali-yasini.jpg",
+
+    genre: "pop",
+
+    description: "خواننده جوان موسیقی پاپ",
+
+    isPopular: true
+},
+
+
+{
+    id: "hamid-hiraad",
+
+    name: "حمید هیراد",
+
+    slug: "hamid-hiraad",
+
+    image: "images/artists/hamid-hiraad.jpg",
+
+    genre: "pop",
+
+    description: "خواننده سبک پاپ و تلفیقی",
+
+    isPopular: true
+},
+
+
+{
+    id: "mohsen-yeganeh",
+
+    name: "محسن یگانه",
+
+    slug: "mohsen-yeganeh",
+
+    image: "images/artists/mohsen-yeganeh.jpg",
+
+    genre: "pop",
+
+    description: "خواننده و آهنگساز ایرانی",
+
+    isPopular: true
+},
+
+
+{
+    id: "sirvan-hossein",
+
+    name: "محسن چاوشی",
+
+    slug: "mohsen-chavoshi",
+
+    image: "images/artists/mohsen-chavoshi.jpg",
+
+    genre: "rock",
+
+    description: "خواننده و آهنگساز ایرانی",
+
+    isPopular: true
+},
+
+
+{
+    id: "shahram-shokouhi",
+
+    name: "شهرام شکوهی",
+
+    slug: "shahram-shokouhi",
+
+    image: "images/artists/shahram-shokouhi.jpg",
+
+    genre: "fusion",
+
+    description: "خواننده موسیقی تلفیقی",
+
+    isPopular: true
+},
+
+
+{
+    id: "armin-2afm",
+
+    name: "آرمین 2AFM",
+
+    slug: "armin-2afm",
+
+    image: "images/artists/armin-2afm.jpg",
+
+    genre: "rap",
+
+    description: "خواننده سبک رپ و هیپ‌هاپ",
+
+    isPopular: true
+}
 
 ],
 
