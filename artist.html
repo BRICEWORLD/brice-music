@@ -27,9 +27,13 @@ href="css/responsive.css">
 <link rel="stylesheet"
 href="css/player.css">
 
-<link rel="manifest" href="manifest.json">
+<link rel="manifest"
+href="manifest.json">
 
-<link rel="icon" type="image/png" href="images/favicon.png">
+<link rel="icon"
+type="image/png"
+href="images/favicon.png">
+
 
 <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700;800&display=swap"
 rel="stylesheet">
@@ -40,6 +44,10 @@ rel="stylesheet">
 
 <body>
 
+
+<!-- =========================
+     HEADER
+========================= -->
 
 <header class="site-header">
 
@@ -58,7 +66,6 @@ MUSIC
 </strong>
 
 </a>
-
 
 
 <nav class="main-nav">
@@ -84,7 +91,6 @@ class="active">
 دسته‌بندی
 </a>
 
-
 </nav>
 
 
@@ -100,12 +106,14 @@ class="search-button">
 
 
 
+<!-- =========================
+     ARTISTS
+========================= -->
 
 <main>
 
 
 <section class="artists-section">
-
 
 <div class="container">
 
@@ -126,95 +134,21 @@ Artists
 
 </div>
 
-
 </div>
 
 
 
+<!-- =========================
+     ARTIST LIST
+========================= -->
 
-<div class="artist-grid">
-
-
-
-<a href="#"
-class="artist-card">
-
-
-<img src="images/artists/artist-01.jpg"
-alt="خواننده">
-
-
-<h3>
-نام خواننده
-</h3>
-
-
-</a>
-
-
-
-
-
-<a href="#"
-class="artist-card">
-
-
-<img src="images/artists/artist-02.jpg"
-alt="خواننده">
-
-
-<h3>
-نام خواننده
-</h3>
-
-
-</a>
-
-
-
-
-
-<a href="#"
-class="artist-card">
-
-
-<img src="images/artists/artist-03.jpg"
-alt="خواننده">
-
-
-<h3>
-نام خواننده
-</h3>
-
-
-</a>
-
-
-
-
-
-<a href="#"
-class="artist-card">
-
-
-<img src="images/artists/artist-04.jpg"
-alt="خواننده">
-
-
-<h3>
-نام خواننده
-</h3>
-
-
-</a>
-
-
+<div class="artist-grid"
+id="artist-list">
 
 </div>
 
 
 </div>
-
 
 </section>
 
@@ -223,7 +157,9 @@ alt="خواننده">
 
 
 
-
+<!-- =========================
+     MUSIC PLAYER
+========================= -->
 
 <div class="music-player">
 
@@ -232,9 +168,12 @@ alt="خواننده">
 
 <div class="player-song">
 
+
 <div class="player-cover">
 
-<img src="images/music/music-01.jpg">
+<img
+src="images/music/music-01.jpg"
+alt="BRICE MUSIC">
 
 </div>
 
@@ -261,18 +200,31 @@ BRICE MUSIC
 <div class="player-controls">
 
 
-<button>
+<button
+type="button"
+aria-label="آهنگ قبلی">
+
 ⏮
+
 </button>
 
 
-<button class="main-play">
+<button
+class="main-play"
+type="button"
+aria-label="پخش">
+
 ▶
+
 </button>
 
 
-<button>
+<button
+type="button"
+aria-label="آهنگ بعدی">
+
 ⏭
+
 </button>
 
 
@@ -285,13 +237,89 @@ BRICE MUSIC
 
 
 
+<!-- =========================
+     JAVASCRIPT
+========================= -->
 
+<script src="js/data.js"></script>
 
 <script src="js/music.js"></script>
 
 <script src="js/player.js"></script>
 
 <script src="js/main.js"></script>
+
+
+<!-- =========================
+     ARTIST SYSTEM
+========================= -->
+
+<script>
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
+
+        const artistList =
+            document.getElementById("artist-list");
+
+
+        if (!artistList) {
+
+            return;
+
+        }
+
+
+        const artists =
+            musicDatabase.artists;
+
+
+        artistList.innerHTML = "";
+
+
+        artists.forEach(
+            function (artist) {
+
+
+                const card =
+                    document.createElement("a");
+
+
+                card.className =
+                    "artist-card";
+
+
+                card.href =
+                    "artist.html?artist=" +
+                    encodeURIComponent(artist.id);
+
+
+                card.innerHTML = `
+
+                    <img
+                        src="${artist.image}"
+                        alt="${artist.name}"
+                        loading="lazy"
+                    >
+
+
+                    <h3>
+                        ${artist.name}
+                    </h3>
+
+                `;
+
+
+                artistList.appendChild(card);
+
+            }
+        );
+
+    }
+);
+
+</script>
 
 
 </body>
