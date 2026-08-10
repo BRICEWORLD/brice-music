@@ -39,7 +39,7 @@ function loadSong(song){
 
     currentSong = song;
 
-    audio.src = song.file;
+    audio.src = song.file || song.audio;
 
     cover.src = song.cover;
 
