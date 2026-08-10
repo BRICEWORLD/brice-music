@@ -99,10 +99,10 @@ const musicDatabase = {
 
 
     /* =========================
-       ARTISTS
-    ========================= */
+   ARTISTS
+========================= */
 
-    artists: [
+artists: [
 
     {
         id: "sample-artist",
@@ -113,11 +113,68 @@ const musicDatabase = {
 
         image: "images/artists/sample-artist.jpg",
 
+        bio: "معرفی خواننده",
+
+        country: "Iran",
+
+        genre: "pop",
+
+        isFeatured: true
+    },
+
+
+    {
+        id: "artist-2",
+
+        name: "خواننده دوم",
+
+        slug: "artist-2",
+
+        image: "images/artists/sample-artist.jpg",
+
         bio: "",
 
         country: "Iran",
 
         genre: "pop",
+
+        isFeatured: false
+    },
+
+
+    {
+        id: "artist-3",
+
+        name: "خواننده سوم",
+
+        slug: "artist-3",
+
+        image: "images/artists/sample-artist.jpg",
+
+        bio: "",
+
+        country: "Iran",
+
+        genre: "rap",
+
+        isFeatured: false
+    },
+
+
+    {
+        id: "artist-4",
+
+        name: "خواننده چهارم",
+
+        slug: "artist-4",
+
+        image: "images/artists/sample-artist.jpg",
+
+        bio: "",
+
+        country: "Iran",
+
+        genre: "traditional",
 
         isFeatured: false
     }
