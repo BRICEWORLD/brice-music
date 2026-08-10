@@ -155,10 +155,10 @@ const musicDatabase = {
 
 
     /* =========================
-       SONGS
-    ========================= */
+   SONGS
+========================= */
 
-    songs: [
+songs: [
 
     {
         id: 1,
@@ -171,7 +171,7 @@ const musicDatabase = {
 
         category: "pop",
 
-        cover: "images/music/sample.jpg",
+        cover: "images/music/music-01.jpg",
 
         audio: "audio/sample.mp3",
 
@@ -179,15 +179,14 @@ const musicDatabase = {
 
         date: "2026-01-01",
 
-        views: 0,
+        views: 1000,
 
-        isPopular: false,
+        isPopular: true,
 
-        isFeatured: false
+        isFeatured: true
     }
 
 ],
-
 
     /* =========================
        PLAYLISTS
