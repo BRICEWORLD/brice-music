@@ -5,17 +5,15 @@
 
 <meta charset="UTF-8">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
 <title>
 BRICE MUSIC | دسته‌بندی موسیقی
 </title>
 
-
 <meta name="description"
 content="دسته‌بندی آهنگ‌ها بر اساس سبک موسیقی در BRICE MUSIC">
-
 
 <link rel="stylesheet" href="css/style.css">
 
@@ -25,11 +23,12 @@ content="دسته‌بندی آهنگ‌ها بر اساس سبک موسیقی �
 
 <link rel="manifest" href="manifest.json">
 
-<link rel="icon" type="image/png" href="images/favicon.png">
-  
+<link rel="icon"
+type="image/png"
+href="images/favicon.png">
+
 <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700;800&display=swap"
 rel="stylesheet">
-
 
 </head>
 
@@ -37,13 +36,13 @@ rel="stylesheet">
 <body>
 
 
-
 <header class="site-header">
 
 <div class="container header-inner">
 
 
-<a href="index.html" class="logo">
+<a href="index.html"
+class="logo">
 
 <span>
 BRICE
@@ -54,7 +53,6 @@ MUSIC
 </strong>
 
 </a>
-
 
 
 <nav class="main-nav">
@@ -75,16 +73,19 @@ MUSIC
 آلبوم‌ها
 </a>
 
-<a href="category.html" class="active">
+<a href="category.html"
+class="active">
 دسته‌بندی
 </a>
 
 </nav>
 
 
+<a href="search.html"
+class="search-button">
 
-<a href="search.html" class="search-button">
 🔍
+
 </a>
 
 
@@ -94,15 +95,12 @@ MUSIC
 
 
 
-
 <main>
 
 
 <section class="categories-section">
 
-
 <div class="container">
-
 
 
 <div class="section-header">
@@ -113,141 +111,27 @@ MUSIC
 Music Styles
 </span>
 
-
 <h1>
 دسته‌بندی موسیقی
 </h1>
 
+</div>
 
 </div>
 
 
-</div>
+<!-- =========================
+     CATEGORY GRID
+========================= -->
 
-
-
-
-<div class="category-grid">
-
-
-
-<a href="music.html" class="category-card">
-
-<span>
-🎤
-</span>
-
-<h3>
-پاپ
-</h3>
-
-</a>
-
-
-
-<a href="music.html" class="category-card">
-
-<span>
-🎧
-</span>
-
-<h3>
-رپ و هیپ‌هاپ
-</h3>
-
-</a>
-
-
-
-<a href="music.html" class="category-card">
-
-<span>
-🎻
-</span>
-
-<h3>
-سنتی
-</h3>
-
-</a>
-
-
-
-<a href="music.html" class="category-card">
-
-<span>
-💔
-</span>
-
-<h3>
-غمگین
-</h3>
-
-</a>
-
-
-
-<a href="music.html" class="category-card">
-
-<span>
-❤️
-</span>
-
-<h3>
-عاشقانه
-</h3>
-
-</a>
-
-
-
-<a href="music.html" class="category-card">
-
-<span>
-🔥
-</span>
-
-<h3>
-شاد
-</h3>
-
-</a>
-
-
-
-<a href="music.html" class="category-card">
-
-<span>
-🌙
-</span>
-
-<h3>
-آرامش‌بخش
-</h3>
-
-</a>
-
-
-
-<a href="music.html" class="category-card">
-
-<span>
-⚡
-</span>
-
-<h3>
-انرژی‌بخش
-</h3>
-
-</a>
-
+<div class="category-grid"
+id="category-list">
 
 
 </div>
 
 
 </div>
-
 
 </section>
 
@@ -256,7 +140,9 @@ Music Styles
 
 
 
-
+<!-- =========================
+     MUSIC PLAYER
+========================= -->
 
 <div class="music-player">
 
@@ -265,10 +151,11 @@ Music Styles
 
 <div class="player-song">
 
-
 <div class="player-cover">
 
-<img src="images/music/music-01.jpg">
+<img
+src="images/music/music-01.jpg"
+alt="BRICE MUSIC">
 
 </div>
 
@@ -279,38 +166,36 @@ Music Styles
 آهنگ انتخاب نشده
 </h4>
 
-
 <span>
 BRICE MUSIC
 </span>
 
-
 </div>
 
-
 </div>
-
 
 
 
 <div class="player-controls">
 
-
-<button>
+<button
+type="button">
 ⏮
 </button>
 
 
-<button class="main-play">
+<button
+class="main-play"
+type="button">
 ▶
 </button>
 
 
-<button>
+<button
+type="button">
 ⏭
 </button>
 
-
 </div>
 
 
@@ -320,12 +205,145 @@ BRICE MUSIC
 
 
 
+<!-- =========================
+     SCRIPTS
+========================= -->
+
+<script src="js/data.js"></script>
 
 <script src="js/music.js"></script>
 
 <script src="js/player.js"></script>
 
 <script src="js/main.js"></script>
+
+
+<script>
+
+
+// =======================================
+// CATEGORY ICONS
+// =======================================
+
+const categoryIcons = {
+
+    pop: "🎤",
+
+    rap: "🎧",
+
+    traditional: "🎻",
+
+    rock: "🎸",
+
+    electronic: "⚡",
+
+    fusion: "🎶",
+
+    classical: "🎼",
+
+    sad: "💔",
+
+    romantic: "❤️",
+
+    happy: "🔥",
+
+    nostalgic: "🌙",
+
+    instrumental: "🎹",
+
+    local: "🥁",
+
+    international: "🌍"
+
+};
+
+
+
+// =======================================
+// RENDER CATEGORIES
+// =======================================
+
+function renderCategories() {
+
+
+    const categoryList =
+        document.getElementById("category-list");
+
+
+    if (!categoryList) {
+
+        return;
+
+    }
+
+
+    categoryList.innerHTML = "";
+
+
+    if (
+        typeof musicDatabase === "undefined" ||
+        !musicDatabase.categories
+    ) {
+
+        return;
+
+    }
+
+
+    musicDatabase.categories.forEach(
+        category => {
+
+
+            const card =
+                document.createElement("a");
+
+
+            card.className =
+                "category-card";
+
+
+            card.href =
+                "music.html?category=" +
+                encodeURIComponent(category.id);
+
+
+            const icon =
+                categoryIcons[category.id] ||
+                "🎵";
+
+
+            card.innerHTML = `
+
+                <span>
+                    ${icon}
+                </span>
+
+                <h3>
+                    ${category.name}
+                </h3>
+
+            `;
+
+
+            categoryList.appendChild(card);
+
+        }
+    );
+
+}
+
+
+
+// =======================================
+// START
+// =======================================
+
+document.addEventListener(
+    "DOMContentLoaded",
+    renderCategories
+);
+
+</script>
 
 
 </body>
