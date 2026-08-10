@@ -275,27 +275,47 @@ artists: [
 
 ],
 
-
-    /* =========================
+/* =========================
    ALBUMS
 ========================= */
 
 albums: [
 
     {
-        id: "sample-album",
+        id: "album-homayoun-shajarian",
 
-        title: "نام آلبوم",
+        title: "آلبوم همایون شجریان",
 
-        slug: "sample-album",
+        slug: "album-homayoun-shajarian",
 
-        artistId: "sample-artist",
+        artistId: "homayoun-shajarian",
 
-        cover: "images/albums/sample-album.jpg",
+        cover: "images/albums/homayoun-shajarian.jpg",
 
         year: 2026,
 
-        description: "معرفی کوتاه آلبوم",
+        description: "آلبوم‌های همایون شجریان",
+
+        genre: "traditional",
+
+        isFeatured: true
+    },
+
+
+    {
+        id: "album-sirvan-khosravi",
+
+        title: "آلبوم سیروان خسروی",
+
+        slug: "album-sirvan-khosravi",
+
+        artistId: "sirvan-khosravi",
+
+        cover: "images/albums/sirvan-khosravi.jpg",
+
+        year: 2026,
+
+        description: "آلبوم‌های سیروان خسروی",
 
         genre: "pop",
 
@@ -304,19 +324,19 @@ albums: [
 
 
     {
-        id: "album-2",
+        id: "album-shayan-yousefi",
 
-        title: "آلبوم دوم",
+        title: "آلبوم شایان یوسفی",
 
-        slug: "album-2",
+        slug: "album-shayan-yousefi",
 
-        artistId: "artist-2",
+        artistId: "shayan-yousefi",
 
-        cover: "images/albums/sample-album.jpg",
+        cover: "images/albums/shayan-yousefi.jpg",
 
         year: 2026,
 
-        description: "",
+        description: "آلبوم‌های شایان یوسفی",
 
         genre: "pop",
 
@@ -325,47 +345,153 @@ albums: [
 
 
     {
-        id: "album-3",
+        id: "album-reza-sadeghi",
 
-        title: "آلبوم سوم",
+        title: "آلبوم رضا صادقی",
 
-        slug: "album-3",
+        slug: "album-reza-sadeghi",
 
-        artistId: "artist-3",
+        artistId: "reza-sadeghi",
 
-        cover: "images/albums/sample-album.jpg",
+        cover: "images/albums/reza-sadeghi.jpg",
 
         year: 2026,
 
-        description: "",
+        description: "آلبوم‌های رضا صادقی",
 
-        genre: "rap",
+        genre: "pop",
+
+        isFeatured: true
+    },
+
+
+    {
+        id: "album-ali-yasini",
+
+        title: "آلبوم علی یاسینی",
+
+        slug: "album-ali-yasini",
+
+        artistId: "ali-yasini",
+
+        cover: "images/albums/ali-yasini.jpg",
+
+        year: 2026,
+
+        description: "آلبوم‌های علی یاسینی",
+
+        genre: "pop",
+
+        isFeatured: true
+    },
+
+
+    {
+        id: "album-hamid-hiraad",
+
+        title: "آلبوم حمید هیراد",
+
+        slug: "album-hamid-hiraad",
+
+        artistId: "hamid-hiraad",
+
+        cover: "images/albums/hamid-hiraad.jpg",
+
+        year: 2026,
+
+        description: "آلبوم‌های حمید هیراد",
+
+        genre: "pop",
 
         isFeatured: false
     },
 
 
     {
-        id: "album-4",
+        id: "album-mohsen-yeganeh",
 
-        title: "آلبوم چهارم",
+        title: "آلبوم محسن یگانه",
 
-        slug: "album-4",
+        slug: "album-mohsen-yeganeh",
 
-        artistId: "artist-4",
+        artistId: "mohsen-yeganeh",
 
-        cover: "images/albums/sample-album.jpg",
+        cover: "images/albums/mohsen-yeganeh.jpg",
 
         year: 2026,
 
-        description: "",
+        description: "آلبوم‌های محسن یگانه",
 
-        genre: "traditional",
+        genre: "pop",
+
+        isFeatured: true
+    },
+
+
+    {
+        id: "album-mohsen-chavoshi",
+
+        title: "آلبوم محسن چاوشی",
+
+        slug: "album-mohsen-chavoshi",
+
+        artistId: "mohsen-chavoshi",
+
+        cover: "images/albums/mohsen-chavoshi.jpg",
+
+        year: 2026,
+
+        description: "آلبوم‌های محسن چاوشی",
+
+        genre: "rock",
+
+        isFeatured: true
+    },
+
+
+    {
+        id: "album-shahram-shokouhi",
+
+        title: "آلبوم شهرام شکوهی",
+
+        slug: "album-shahram-shokouhi",
+
+        artistId: "shahram-shokouhi",
+
+        cover: "images/albums/shahram-shokouhi.jpg",
+
+        year: 2026,
+
+        description: "آلبوم‌های شهرام شکوهی",
+
+        genre: "fusion",
 
         isFeatured: false
+    },
+
+
+    {
+        id: "album-armin-2afm",
+
+        title: "آلبوم آرمین 2AFM",
+
+        slug: "album-armin-2afm",
+
+        artistId: "armin-2afm",
+
+        cover: "images/albums/armin-2afm.jpg",
+
+        year: 2026,
+
+        description: "آلبوم‌های آرمین 2AFM",
+
+        genre: "rap",
+
+        isFeatured: true
     }
 
 ],
+    
 
 
     /* =========================
