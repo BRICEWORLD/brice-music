@@ -892,9 +892,389 @@ albums: [
         isFeatured: true
     }
 
-],
-    
+   
+/* =========================
+   NEW ARTISTS ALBUMS
+   ARTISTS 11 - 30
+========================= */
 
+
+{
+    id: "album-amir-tataloo-01",
+    title: "شماره ۶",
+    slug: "amir-tataloo-shomare-6",
+    artistId: "amir-tataloo",
+    cover: "images/albums/amir-tataloo.jpg",
+    year: null,
+    description: "آلبوم امیر تتلو",
+    genre: "rap",
+    isFeatured: true
+},
+
+
+{
+    id: "album-amir-tataloo-02",
+    title: "جهنم",
+    slug: "amir-tataloo-jahannam",
+    artistId: "amir-tataloo",
+    cover: "images/albums/amir-tataloo.jpg",
+    year: null,
+    description: "آلبوم امیر تتلو",
+    genre: "rap",
+    isFeatured: false
+},
+
+
+{
+    id: "album-sasy-01",
+    title: "بد از تو",
+    slug: "sasy-bad-az-to",
+    artistId: "sasy",
+    cover: "images/albums/sasy.jpg",
+    year: null,
+    description: "آثار آلبومی ساسی",
+    genre: "pop",
+    isFeatured: true
+},
+
+
+{
+    id: "album-sasy-02",
+    title: "ساسی",
+    slug: "sasy-album",
+    artistId: "sasy",
+    cover: "images/albums/sasy.jpg",
+    year: null,
+    description: "آثار آلبومی ساسی",
+    genre: "pop",
+    isFeatured: false
+},
+
+
+{
+    id: "album-tohi-01",
+    title: "اینجا ایرانه",
+    slug: "tohi-inja-irane",
+    artistId: "tohi",
+    cover: "images/albums/tohi.jpg",
+    year: null,
+    description: "آثار حسین تهی",
+    genre: "rap",
+    isFeatured: true
+},
+
+
+{
+    id: "album-tohi-02",
+    title: "تهی",
+    slug: "tohi-album",
+    artistId: "tohi",
+    cover: "images/albums/tohi.jpg",
+    year: null,
+    description: "آثار حسین تهی",
+    genre: "rap",
+    isFeatured: false
+},
+
+
+{
+    id: "album-yas-01",
+    title: "خیلی وقت بود",
+    slug: "yas-kheyli-vaght-bud",
+    artistId: "yas",
+    cover: "images/albums/yas.jpg",
+    year: null,
+    description: "آثار یاس",
+    genre: "rap",
+    isFeatured: true
+},
+
+
+{
+    id: "album-yas-02",
+    title: "از چی بگم",
+    slug: "yas-az-chi-begam",
+    artistId: "yas",
+    cover: "images/albums/yas.jpg",
+    year: null,
+    description: "آثار یاس",
+    genre: "rap",
+    isFeatured: false
+},
+
+
+{
+    id: "album-reza-pishro-01",
+    title: "دوران طلایی",
+    slug: "reza-pishro-dorane-talaei",
+    artistId: "reza-pishro",
+    cover: "images/albums/reza-pishro.jpg",
+    year: null,
+    description: "آثار رضا پیشرو",
+    genre: "rap",
+    isFeatured: true
+},
+
+
+{
+    id: "album-reza-pishro-02",
+    title: "ریل",
+    slug: "reza-pishro-rail",
+    artistId: "reza-pishro",
+    cover: "images/albums/reza-pishro.jpg",
+    year: 2017,
+    description: "آثار رضا پیشرو",
+    genre: "rap",
+    isFeatured: false
+},
+
+
+{
+    id: "album-ho3ein-01",
+    title: "جنگل آسفالت",
+    slug: "ho3ein-jangale-asfalt",
+    artistId: "ho3ein",
+    cover: "images/albums/ho3ein.jpg",
+    year: null,
+    description: "آثار حصین",
+    genre: "rap",
+    isFeatured: true
+},
+
+
+{
+    id: "album-ho3ein-02",
+    title: "آماده باش",
+    slug: "ho3ein-amade-bash",
+    artistId: "ho3ein",
+    cover: "images/albums/ho3ein.jpg",
+    year: null,
+    description: "آثار حصین",
+    genre: "rap",
+    isFeatured: false
+},
+
+
+{
+    id: "album-shervin-01",
+    title: "مجموعه آثار",
+    slug: "shervin-hajipour-collection",
+    artistId: "shervin-hajipour",
+    cover: "images/albums/shervin-hajipour.jpg",
+    year: null,
+    description: "مجموعه آثار شروین حاجی‌پور",
+    genre: "pop",
+    isFeatured: true
+},
+
+
+{
+    id: "album-shadmehr-01",
+    title: "دهاتی",
+    slug: "shadmehr-dehati",
+    artistId: "shadmehr-aghili",
+    cover: "images/albums/shadmehr-aghili.jpg",
+    year: 1999,
+    description: "آلبوم دهاتی شادمهر عقیلی",
+    genre: "pop",
+    isFeatured: true
+},
+
+
+{
+    id: "album-shadmehr-02",
+    title: "پاپ‌کورن",
+    slug: "shadmehr-popcorn",
+    artistId: "shadmehr-aghili",
+    cover: "images/albums/shadmehr-aghili.jpg",
+    year: 2005,
+    description: "آلبوم پاپ‌کورن شادمهر عقیلی",
+    genre: "pop",
+    isFeatured: true
+},
+
+
+{
+    id: "album-shadmehr-03",
+    title: "طرفدار",
+    slug: "shadmehr-tarafdar",
+    artistId: "shadmehr-aghili",
+    cover: "images/albums/shadmehr-aghili.jpg",
+    year: 2012,
+    description: "آلبوم طرفدار شادمهر عقیلی",
+    genre: "pop",
+    isFeatured: false
+},
+
+
+{
+    id: "album-shadmehr-04",
+    title: "تجربه کن",
+    slug: "shadmehr-tajrobeh-kon",
+    artistId: "shadmehr-aghili",
+    cover: "images/albums/shadmehr-aghili.jpg",
+    year: 2016,
+    description: "آلبوم تجربه کن شادمهر عقیلی",
+    genre: "pop",
+    isFeatured: false
+},
+
+
+{
+    id: "album-majid-razavi-01",
+    title: "مجموعه آثار",
+    slug: "majid-razavi-collection",
+    artistId: "majid-razavi",
+    cover: "images/albums/majid-razavi.jpg",
+    year: null,
+    description: "مجموعه آثار مجید رضوی",
+    genre: "pop",
+    isFeatured: true
+},
+
+
+{
+    id: "album-behnam-bani-01",
+    title: "مجموعه آثار",
+    slug: "behnam-bani-collection",
+    artistId: "behnam-bani",
+    cover: "images/albums/behnam-bani.jpg",
+    year: null,
+    description: "مجموعه آثار بهنام بانی",
+    genre: "pop",
+    isFeatured: true
+},
+
+
+{
+    id: "album-erfan-tahmasbi-01",
+    title: "مجموعه آثار",
+    slug: "erfan-tahmasbi-collection",
+    artistId: "erfan-tahmasbi",
+    cover: "images/albums/erfan-tahmasbi.jpg",
+    year: null,
+    description: "مجموعه آثار عرفان طهماسبی",
+    genre: "pop",
+    isFeatured: true
+},
+
+
+{
+    id: "album-sami-beigi-01",
+    title: "مجموعه آثار",
+    slug: "sami-beigi-collection",
+    artistId: "sami-beigi",
+    cover: "images/albums/sami-beigi.jpg",
+    year: null,
+    description: "مجموعه آثار سامی بیگی",
+    genre: "pop",
+    isFeatured: true
+},
+
+
+{
+    id: "album-arash-01",
+    title: "مجموعه آثار",
+    slug: "arash-collection",
+    artistId: "arash",
+    cover: "images/albums/arash.jpg",
+    year: null,
+    description: "مجموعه آثار آرش",
+    genre: "pop",
+    isFeatured: true
+},
+
+
+{
+    id: "album-kourosh-01",
+    title: "مجموعه آثار",
+    slug: "kourosh-collection",
+    artistId: "koorosh",
+    cover: "images/albums/koorosh.jpg",
+    year: null,
+    description: "مجموعه آثار کوروش",
+    genre: "rap",
+    isFeatured: true
+},
+
+
+{
+    id: "album-sijal-01",
+    title: "مجموعه آثار",
+    slug: "sijal-collection",
+    artistId: "sijal",
+    cover: "images/albums/sijal.jpg",
+    year: null,
+    description: "مجموعه آثار سیجل",
+    genre: "rap",
+    isFeatured: true
+},
+
+
+{
+    id: "album-behzad-leito-01",
+    title: "مجموعه آثار",
+    slug: "behzad-leito-collection",
+    artistId: "behzad-leito",
+    cover: "images/albums/behzad-leito.jpg",
+    year: null,
+    description: "مجموعه آثار بهزاد لیتو",
+    genre: "rap",
+    isFeatured: true
+},
+
+
+{
+    id: "album-hiphopologist-01",
+    title: "مجموعه آثار",
+    slug: "hiphopologist-collection",
+    artistId: "hiphopologist",
+    cover: "images/albums/hiphopologist.jpg",
+    year: null,
+    description: "مجموعه آثار هیپهاپولوژیست",
+    genre: "rap",
+    isFeatured: true
+},
+
+
+{
+    id: "album-ali-sorena-01",
+    title: "مجموعه آثار",
+    slug: "ali-sorena-collection",
+    artistId: "ali-sorena",
+    cover: "images/albums/ali-sorena.jpg",
+    year: null,
+    description: "مجموعه آثار علی سورنا",
+    genre: "rap",
+    isFeatured: true
+},
+
+
+{
+    id: "album-hichkas-01",
+    title: "جنگل آسفالت",
+    slug: "hichkas-jangale-asfalt",
+    artistId: "hichkas",
+    cover: "images/albums/hichkas.jpg",
+    year: null,
+    description: "آثار هیچکس",
+    genre: "rap",
+    isFeatured: true
+},
+
+
+{
+    id: "album-zebazi-01",
+    title: "مجموعه آثار زدبازی",
+    slug: "zedbazi-collection",
+    artistId: "zebazi",
+    cover: "images/albums/zebazi.jpg",
+    year: null,
+    description: "مجموعه آثار گروه زدبازی",
+    genre: "rap",
+    isFeatured: true
+}
+],
 /* =========================
    SONGS
 ========================= */
