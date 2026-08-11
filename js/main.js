@@ -1,38 +1,37 @@
 // =======================================
-// BRICE MUSIC MAIN JS
+// BRICE MUSIC
+// MAIN JS
 // =======================================
 
 
-// =========================
+// =======================================
 // GET ARTIST NAME
-// =========================
+// =======================================
 
-function getArtistName(id){
+function getArtistName(id) {
 
     const artist =
-    musicDatabase.artists.find(
-        artist => artist.id === id
-    );
+        musicDatabase.artists.find(
+            artist => artist.id === id
+        );
 
-    if(artist){
-
-        return artist.name;
-
-    }
-
-    return "نام خواننده";
+    return artist
+        ? artist.name
+        : "نام خواننده";
 
 }
 
 
-
-// =========================
+// =======================================
 // PLAY SELECTED SONG
-// =========================
+// =======================================
 
-function playSelectedSong(song){
+function playSelectedSong(song) {
 
-    if(typeof loadSong === "function"){
+    if (
+        typeof loadSong === "function" &&
+        typeof playSong === "function"
+    ) {
 
         loadSong(song);
 
@@ -43,261 +42,336 @@ function playSelectedSong(song){
 }
 
 
+// =======================================
+// CREATE HOME ARTISTS
+// =======================================
 
-// =========================
+function createHomeArtists() {
+
+    const artistList =
+        document.getElementById("home-artists");
+
+
+    if (!artistList) {
+
+        return;
+
+    }
+
+
+    artistList.innerHTML = "";
+
+
+    if (
+        typeof musicDatabase === "undefined" ||
+        !musicDatabase.artists
+    ) {
+
+        return;
+
+    }
+
+
+    const popularArtists =
+        musicDatabase.artists
+            .filter(
+                artist =>
+                    artist.isPopular === true
+            )
+            .slice(0, 4);
+
+
+    popularArtists.forEach(
+        artist => {
+
+
+            const card =
+                document.createElement("a");
+
+
+            card.className =
+                "artist-card";
+
+
+            card.href =
+                "artist.html?artist=" +
+                encodeURIComponent(
+                    artist.id
+                );
+
+
+            card.innerHTML = `
+
+                <img
+                    src="${artist.image}"
+                    alt="${artist.name}"
+                    loading="lazy"
+                >
+
+                <h3>
+                    ${artist.name}
+                </h3>
+
+            `;
+
+
+            artistList.appendChild(card);
+
+        }
+    );
+
+
+}
+
+
+// =======================================
 // CREATE LATEST MUSIC
-// =========================
+// =======================================
 
-function createMusicCards(){
+function createMusicCards() {
 
     const latestMusic =
-    document.getElementById("latest-music");
+        document.getElementById("latest-music");
 
 
-    if(!latestMusic) return;
+    if (!latestMusic) {
+
+        return;
+
+    }
 
 
     latestMusic.innerHTML = "";
 
 
     const songs =
-    musicDatabase.songs;
+        typeof getLatestSongs === "function"
+            ? getLatestSongs().slice(0, 4)
+            : musicDatabase.songs.slice(0, 4);
 
 
-    songs.forEach(song => {
-
-        const card =
-        document.createElement("article");
+    songs.forEach(
+        song => {
 
 
-        card.className =
-        "music-card";
+            const card =
+                document.createElement("article");
 
 
-        card.innerHTML = `
-
-            <div class="music-cover">
-
-                <img
-                    src="${song.cover}"
-                    alt="${song.title}"
-                >
-
-                <button
-                    class="play-button"
-                    type="button"
-                    aria-label="پخش آهنگ"
-                >
-                    ▶
-                </button>
-
-            </div>
+            card.className =
+                "music-card";
 
 
-            <div class="music-info">
+            card.innerHTML = `
 
-                <h3>
-                    ${song.title}
-                </h3>
+                <div class="music-cover">
 
-                <p>
-                    ${getArtistName(song.artistId)}
-                </p>
+                    <img
+                        src="${song.cover}"
+                        alt="${song.title}"
+                        loading="lazy"
+                    >
 
-            </div>
+                    <button
+                        class="play-button"
+                        type="button"
+                        aria-label="پخش ${song.title}"
+                    >
+                        ▶
+                    </button>
 
-        `;
+                </div>
 
 
-        latestMusic.appendChild(card);
+                <div class="music-info">
 
-    });
+                    <h3>
+                        ${song.title}
+                    </h3>
+
+                    <p>
+                        ${getArtistName(
+                            song.artistId
+                        )}
+                    </p>
+
+                </div>
+
+            `;
+
+
+            const playButton =
+                card.querySelector(
+                    ".play-button"
+                );
+
+
+            playButton.addEventListener(
+                "click",
+                function () {
+
+                    playSelectedSong({
+                        ...song,
+                        artist:
+                            getArtistName(
+                                song.artistId
+                            )
+                    });
+
+                }
+            );
+
+
+            latestMusic.appendChild(card);
+
+        }
+    );
 
 }
 
 
-
-// =========================
+// =======================================
 // CREATE POPULAR MUSIC
-// =========================
+// =======================================
 
-function createPopularMusic(){
+function createPopularMusic() {
 
     const popularMusic =
-    document.getElementById("popular-music");
+        document.getElementById(
+            "popular-music"
+        );
 
 
-    if(!popularMusic) return;
+    if (!popularMusic) {
+
+        return;
+
+    }
 
 
     popularMusic.innerHTML = "";
 
 
-    const songs =
-    musicDatabase.songs.filter(
-        song => song.isPopular === true
-    );
+    const popularSongs =
+        typeof getPopularSongs === "function"
+            ? getPopularSongs().slice(0, 5)
+            : musicDatabase.songs
+                .filter(
+                    song =>
+                        song.isPopular === true
+                )
+                .sort(
+                    (a, b) =>
+                        b.views - a.views
+                )
+                .slice(0, 5);
 
 
-    songs.forEach((song, index) => {
-
-        const item =
-        document.createElement("div");
+    popularSongs.forEach(
+        (song, index) => {
 
 
-        item.className =
-        "popular-item";
+            const item =
+                document.createElement("div");
 
 
-        item.innerHTML = `
-
-            <span class="track-number">
-                ${String(index + 1).padStart(2, "0")}
-            </span>
+            item.className =
+                "popular-item";
 
 
-            <div class="small-cover">
+            item.innerHTML = `
 
-                <img
-                    src="${song.cover}"
-                    alt="${song.title}"
+                <span class="track-number">
+                    ${String(index + 1)
+                        .padStart(2, "0")}
+                </span>
+
+
+                <div class="small-cover">
+
+                    <img
+                        src="${song.cover}"
+                        alt="${song.title}"
+                        loading="lazy"
+                    >
+
+                </div>
+
+
+                <div class="track-info">
+
+                    <h3>
+                        ${song.title}
+                    </h3>
+
+                    <p>
+                        ${getArtistName(
+                            song.artistId
+                        )}
+                    </p>
+
+                </div>
+
+
+                <span class="track-duration">
+                    ${song.duration || "--:--"}
+                </span>
+
+
+                <button
+                    class="small-play"
+                    type="button"
+                    aria-label="پخش ${song.title}"
                 >
+                    ▶
+                </button>
 
-            </div>
-
-
-            <div class="track-info">
-
-                <h3>
-                    ${song.title}
-                </h3>
-
-                <p>
-                    ${getArtistName(song.artistId)}
-                </p>
-
-            </div>
+            `;
 
 
-            <span class="track-duration">
-                ${song.duration || "--:--"}
-            </span>
+            const playButton =
+                item.querySelector(
+                    ".small-play"
+                );
 
 
-            <button
-                class="small-play"
-                type="button"
-                aria-label="پخش آهنگ"
-            >
-                ▶
-            </button>
+            playButton.addEventListener(
+                "click",
+                function () {
 
-        `;
+                    playSelectedSong({
+                        ...song,
+                        artist:
+                            getArtistName(
+                                song.artistId
+                            )
+                    });
+
+                }
+            );
 
 
-        popularMusic.appendChild(item);
+            popularMusic.appendChild(item);
 
-    });
+        }
+    );
 
 }
 
 
-
-// =========================
-// PLAY BUTTONS
-// =========================
+// =======================================
+// START MAIN SYSTEM
+// =======================================
 
 document.addEventListener(
-    "click",
-    function(event){
+    "DOMContentLoaded",
+    function () {
 
+        createHomeArtists();
 
-        const playButton =
-        event.target.closest(
-            ".play-button, .small-play"
-        );
+        createMusicCards();
 
-
-        if(!playButton) return;
-
-
-        const container =
-        playButton.closest(
-            ".music-card, .popular-item"
-        );
-
-
-        if(!container) return;
-
-
-        let songs =
-        musicDatabase.songs;
-
-
-        let song;
-
-
-        if(
-            container.classList.contains(
-                "popular-item"
-            )
-        ){
-
-            const items =
-            [...document.querySelectorAll(
-                ".popular-item"
-            )];
-
-
-            const index =
-            items.indexOf(container);
-
-
-            const popularSongs =
-            songs.filter(
-                song => song.isPopular === true
-            );
-
-
-            song =
-            popularSongs[index];
-
-        }
-
-
-        else{
-
-            const cards =
-            [...document.querySelectorAll(
-                ".music-card"
-            )];
-
-
-            const index =
-            cards.indexOf(container);
-
-
-            song =
-            songs[index];
-
-        }
-
-
-        if(song){
-
-            playSelectedSong(song);
-
-        }
+        createPopularMusic();
 
     }
 );
-
-
-
-// =========================
-// START
-// =========================
-
-createMusicCards();
-
-createPopularMusic();
