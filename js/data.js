@@ -564,27 +564,192 @@ songs: [
 
     {
         id: 1,
-
-        title: "بهت قول میدم",
-
+        title: "نفس‌های بی‌هدف",
         artistId: "mohsen-yeganeh",
-
-        albumId: "album-mohsen-yeganeh",
-
+        albumId: "album-nafasaye-bi-hadaf",
         category: "pop",
-
-        cover: "images/music/behet-ghol-midam.jpg",
-
-        audio: "audio/behet-ghol-midam.mp3",
-
+        cover: "images/music/mohsen-yeganeh.jpg",
+        audio: "audio/mohsen-yeganeh/nafas-haye-bi-hadaf.mp3",
         duration: "00:00",
-
-        date: "2026-08-09",
-
+        date: "2008-01-01",
         views: 100000,
-
         isPopular: true,
+        isFeatured: true
+    },
 
+
+    {
+        id: 2,
+        title: "آخه دل من",
+        artistId: "mohsen-yeganeh",
+        albumId: "album-nafasaye-bi-hadaf",
+        category: "pop",
+        cover: "images/music/mohsen-yeganeh.jpg",
+        audio: "audio/mohsen-yeganeh/akhe-dele-man.mp3",
+        duration: "00:00",
+        date: "2008-01-01",
+        views: 90000,
+        isPopular: true,
+        isFeatured: false
+    },
+
+
+    {
+        id: 3,
+        title: "نخواستم",
+        artistId: "mohsen-yeganeh",
+        albumId: "album-nafasaye-bi-hadaf",
+        category: "pop",
+        cover: "images/music/mohsen-yeganeh.jpg",
+        audio: "audio/mohsen-yeganeh/nakhastam.mp3",
+        duration: "00:00",
+        date: "2008-01-01",
+        views: 80000,
+        isPopular: false,
+        isFeatured: false
+    },
+
+
+    {
+        id: 4,
+        title: "گناهی ندارم",
+        artistId: "mohsen-yeganeh",
+        albumId: "album-nafasaye-bi-hadaf",
+        category: "pop",
+        cover: "images/music/mohsen-yeganeh.jpg",
+        audio: "audio/mohsen-yeganeh/gonahi-nadaram.mp3",
+        duration: "00:00",
+        date: "2008-01-01",
+        views: 75000,
+        isPopular: false,
+        isFeatured: false
+    },
+
+
+    {
+        id: 5,
+        title: "اینجا جای تو نیست",
+        artistId: "mohsen-yeganeh",
+        albumId: "album-nafasaye-bi-hadaf",
+        category: "pop",
+        cover: "images/music/mohsen-yeganeh.jpg",
+        audio: "audio/mohsen-yeganeh/inja-jaye-to-nist.mp3",
+        duration: "00:00",
+        date: "2008-01-01",
+        views: 70000,
+        isPopular: false,
+        isFeatured: false
+    },
+
+
+    {
+        id: 6,
+        title: "چشم‌های خیس من",
+        artistId: "mohsen-yeganeh",
+        albumId: "album-nafasaye-bi-hadaf",
+        category: "pop",
+        cover: "images/music/mohsen-yeganeh.jpg",
+        audio: "audio/mohsen-yeganeh/cheshmhaye-khise-man.mp3",
+        duration: "00:00",
+        date: "2008-01-01",
+        views: 65000,
+        isPopular: false,
+        isFeatured: false
+    },
+
+
+    {
+        id: 7,
+        title: "سرتو بالا بگیر",
+        artistId: "mohsen-yeganeh",
+        albumId: "album-nafasaye-bi-hadaf",
+        category: "pop",
+        cover: "images/music/mohsen-yeganeh.jpg",
+        audio: "audio/mohsen-yeganeh/sareto-bala-begir.mp3",
+        duration: "00:00",
+        date: "2008-01-01",
+        views: 60000,
+        isPopular: false,
+        isFeatured: false
+    },
+
+
+    {
+        id: 8,
+        title: "نشکن دلمو",
+        artistId: "mohsen-yeganeh",
+        albumId: "album-nafasaye-bi-hadaf",
+        category: "pop",
+        cover: "images/music/mohsen-yeganeh.jpg",
+        audio: "audio/mohsen-yeganeh/nashkan-delamo.mp3",
+        duration: "00:00",
+        date: "2008-01-01",
+        views: 55000,
+        isPopular: false,
+        isFeatured: false
+    },
+
+
+    {
+        id: 9,
+        title: "هیچکی نمیتونه بفهمه",
+        artistId: "mohsen-yeganeh",
+        albumId: "album-nafasaye-bi-hadaf",
+        category: "pop",
+        cover: "images/music/mohsen-yeganeh.jpg",
+        audio: "audio/mohsen-yeganeh/hichki-nemitoone-befahme.mp3",
+        duration: "00:00",
+        date: "2008-01-01",
+        views: 50000,
+        isPopular: false,
+        isFeatured: false
+    },
+
+
+    {
+        id: 10,
+        title: "بنویس از سر خط",
+        artistId: "mohsen-yeganeh",
+        albumId: "album-nafasaye-bi-hadaf",
+        category: "pop",
+        cover: "images/music/mohsen-yeganeh.jpg",
+        audio: "audio/mohsen-yeganeh/benevis-az-sare-khat.mp3",
+        duration: "00:00",
+        date: "2008-01-01",
+        views: 45000,
+        isPopular: false,
+        isFeatured: false
+    },
+
+
+    {
+        id: 11,
+        title: "آخه دل من (بی‌کلام)",
+        artistId: "mohsen-yeganeh",
+        albumId: "album-nafasaye-bi-hadaf",
+        category: "pop",
+        cover: "images/music/mohsen-yeganeh.jpg",
+        audio: "audio/mohsen-yeganeh/akhe-dele-man-bikalam.mp3",
+        duration: "00:00",
+        date: "2008-01-01",
+        views: 30000,
+        isPopular: false,
+        isFeatured: false
+    },
+
+
+    {
+        id: 12,
+        title: "بهت قول میدم",
+        artistId: "mohsen-yeganeh",
+        albumId: null,
+        category: "pop",
+        cover: "images/music/behet-ghol-midam.jpg",
+        audio: "audio/behet-ghol-midam.mp3",
+        duration: "00:00",
+        date: "2016-01-01",
+        views: 100000,
+        isPopular: true,
         isFeatured: true
     }
 
