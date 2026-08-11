@@ -408,24 +408,87 @@ albums: [
 
 
     {
-        id: "album-mohsen-yeganeh",
+    id: "album-nafasaye-bi-hadaf",
 
-        title: "آلبوم محسن یگانه",
+    title: "نفس‌های بی‌هدف",
 
-        slug: "album-mohsen-yeganeh",
+    slug: "nafasaye-bi-hadaf",
 
-        artistId: "mohsen-yeganeh",
+    artistId: "mohsen-yeganeh",
 
-        cover: "images/albums/mohsen-yeganeh.jpg",
+    cover: "images/albums/mohsen-yeganeh.jpg",
 
-        year: 2026,
+    year: 1387,
 
-        description: "آلبوم‌های محسن یگانه",
+    description: "اولین آلبوم رسمی محسن یگانه",
 
-        genre: "pop",
+    genre: "pop",
 
-        isFeatured: true
-    },
+    isFeatured: true
+},
+
+
+{
+    id: "album-rage-khab",
+
+    title: "رگ خواب",
+
+    slug: "rage-khab",
+
+    artistId: "mohsen-yeganeh",
+
+    cover: "images/albums/mohsen-yeganeh.jpg",
+
+    year: 1389,
+
+    description: "دومین آلبوم رسمی محسن یگانه",
+
+    genre: "pop",
+
+    isFeatured: true
+},
+
+
+{
+    id: "album-hobab",
+
+    title: "حباب",
+
+    slug: "hobab",
+
+    artistId: "mohsen-yeganeh",
+
+    cover: "images/albums/mohsen-yeganeh.jpg",
+
+    year: 1391,
+
+    description: "سومین آلبوم رسمی محسن یگانه",
+
+    genre: "pop",
+
+    isFeatured: true
+},
+
+
+{
+    id: "album-negahe-man",
+
+    title: "نگاه من",
+
+    slug: "negahe-man",
+
+    artistId: "mohsen-yeganeh",
+
+    cover: "images/albums/mohsen-yeganeh.jpg",
+
+    year: 1394,
+
+    description: "چهارمین آلبوم رسمی محسن یگانه",
+
+    genre: "pop",
+
+    isFeatured: true
+},
 
 
     {
