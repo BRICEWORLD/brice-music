@@ -27,10 +27,8 @@ href="css/responsive.css">
 <link rel="stylesheet"
 href="css/player.css">
 
-
 <link rel="manifest"
 href="manifest.json">
-
 
 <link rel="icon"
 type="image/png"
@@ -39,7 +37,6 @@ href="images/favicon.png">
 
 <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700;800&display=swap"
 rel="stylesheet">
-
 
 </head>
 
@@ -70,36 +67,30 @@ MUSIC
 </a>
 
 
-
 <nav class="main-nav">
 
 <a href="index.html">
 خانه
 </a>
 
-
 <a href="music.html">
 آهنگ‌ها
 </a>
 
-
 <a href="artist.html">
 خواننده‌ها
 </a>
-
 
 <a href="album.html"
 class="active">
 آلبوم‌ها
 </a>
 
-
 <a href="category.html">
 دسته‌بندی
 </a>
 
 </nav>
-
 
 
 <a href="search.html"
@@ -115,26 +106,17 @@ class="search-button">
 
 
 <!-- =========================
-     ALBUM PAGE
+     ALBUMS
 ========================= -->
 
 <main>
 
-
 <section class="music-section">
-
 
 <div class="container">
 
 
-<!-- =========================
-     ALBUM HEADER
-========================= -->
-
-<div id="album-header">
-
 <div class="section-header">
-
 
 <div>
 
@@ -143,20 +125,9 @@ Albums
 </span>
 
 
-<h1 id="album-page-title">
+<h1>
 آلبوم‌های موسیقی
 </h1>
-
-
-</div>
-
-
-<a href="album.html"
-class="view-all">
-
-همه آلبوم‌ها ←
-
-</a>
 
 
 </div>
@@ -175,56 +146,9 @@ id="album-list">
 </div>
 
 
-
-<!-- =========================
-     ALBUM SONGS
-========================= -->
-
-<section
-class="music-section"
-id="album-songs-section"
-style="display:none;">
-
-<div class="container">
-
-
-<div class="section-header">
-
-
-<div>
-
-<span class="section-label">
-موسیقی آلبوم
-</span>
-
-
-<h2 id="album-songs-title">
-آهنگ‌های آلبوم
-</h2>
-
-
-</div>
-
-
-</div>
-
-
-
-<div class="music-grid"
-id="album-songs-list">
-
-</div>
-
-
 </div>
 
 </section>
-
-
-</div>
-
-</section>
-
 
 </main>
 
@@ -240,7 +164,6 @@ id="album-songs-list">
 
 
 <div class="player-song">
-
 
 <div class="player-cover">
 
@@ -262,9 +185,7 @@ alt="BRICE MUSIC">
 BRICE MUSIC
 </span>
 
-
 </div>
-
 
 </div>
 
@@ -335,319 +256,55 @@ document.addEventListener(
     function () {
 
 
-        /* =========================
-           GET URL PARAMETER
-        ========================= */
-
-        const params =
-            new URLSearchParams(
-                window.location.search
-            );
-
-
-        const albumId =
-            params.get("album");
-
-
         const albumList =
-            document.getElementById(
-                "album-list"
-            );
+            document.getElementById("album-list");
 
 
-        const albumTitle =
-            document.getElementById(
-                "album-page-title"
-            );
-
-
-        const albumSongsSection =
-            document.getElementById(
-                "album-songs-section"
-            );
-
-
-        const albumSongsTitle =
-            document.getElementById(
-                "album-songs-title"
-            );
-
-
-        const albumSongsList =
-            document.getElementById(
-                "album-songs-list"
-            );
-
-
-
-        /* =========================
-           SHOW ALL ALBUMS
-        ========================= */
-
-        if (!albumId) {
-
-
-            const albums =
-                musicDatabase.albums;
-
-
-            albumList.innerHTML = "";
-
-
-            albums.forEach(
-                function (album) {
-
-
-                    const artist =
-                        musicDatabase.artists.find(
-                            function (item) {
-
-                                return (
-                                    item.id ===
-                                    album.artistId
-                                );
-
-                            }
-                        );
-
-
-                    const artistName =
-                        artist
-                            ? artist.name
-                            : "نام خواننده";
-
-
-                    const card =
-                        document.createElement(
-                            "article"
-                        );
-
-
-                    card.className =
-                        "music-card";
-
-
-                    card.style.cursor =
-                        "pointer";
-
-
-                    card.innerHTML = `
-
-                        <div class="music-cover">
-
-                            <img
-                                src="${album.cover}"
-                                alt="${album.title}"
-                                loading="lazy"
-                            >
-
-                        </div>
-
-
-                        <div class="music-info">
-
-                            <h3>
-                                ${album.title}
-                            </h3>
-
-                            <p>
-                                ${artistName}
-                            </p>
-
-                        </div>
-
-                    `;
-
-
-                    card.addEventListener(
-                        "click",
-                        function () {
-
-                            window.location.href =
-                                "album.html?album=" +
-                                encodeURIComponent(
-                                    album.id
-                                );
-
-                        }
-                    );
-
-
-                    albumList.appendChild(
-                        card
-                    );
-
-                }
-            );
-
+        if (!albumList) {
 
             return;
 
         }
 
 
-
-        /* =========================
-           FIND SELECTED ALBUM
-        ========================= */
-
-        const album =
-            musicDatabase.albums.find(
-                function (item) {
-
-                    return (
-                        item.id === albumId
-                    );
-
-                }
-            );
+        const albums =
+            musicDatabase.albums;
 
 
-
-        /* =========================
-           ALBUM NOT FOUND
-        ========================= */
-
-        if (!album) {
+        albumList.innerHTML = "";
 
 
-            albumTitle.textContent =
-                "آلبوم پیدا نشد";
-
+        if (
+            !albums ||
+            albums.length === 0
+        ) {
 
             albumList.innerHTML = `
 
                 <p>
-                    آلبوم مورد نظر پیدا نشد.
+                    هنوز آلبومی ثبت نشده است.
                 </p>
 
             `;
-
 
             return;
 
         }
 
 
+        albums.forEach(
+            function (album) {
 
-        /* =========================
-           FIND ARTIST
-        ========================= */
 
-        const artist =
-            musicDatabase.artists.find(
-                function (item) {
-
-                    return (
-                        item.id ===
-                        album.artistId
+                const artist =
+                    musicDatabase.artists.find(
+                        artist =>
+                            artist.id === album.artistId
                     );
-
-                }
-            );
-
-
-        const artistName =
-            artist
-                ? artist.name
-                : "نام خواننده";
-
-
-
-        /* =========================
-           PAGE TITLE
-        ========================= */
-
-        document.title =
-            "BRICE MUSIC | " +
-            album.title;
-
-
-        albumTitle.textContent =
-            album.title;
-
-
-
-        /* =========================
-           HIDE ALBUM LIST
-        ========================= */
-
-        albumList.style.display =
-            "none";
-
-
-
-        /* =========================
-           SHOW SONG SECTION
-        ========================= */
-
-        albumSongsSection.style.display =
-            "block";
-
-
-        albumSongsTitle.textContent =
-            album.title +
-            " | " +
-            artistName;
-
-
-
-        /* =========================
-           FIND ALBUM SONGS
-        ========================= */
-
-        const songs =
-            musicDatabase.songs.filter(
-                function (song) {
-
-                    return (
-                        song.albumId ===
-                        album.id
-                    );
-
-                }
-            );
-
-
-        albumSongsList.innerHTML = "";
-
-
-
-        /* =========================
-           NO SONGS
-        ========================= */
-
-        if (songs.length === 0) {
-
-
-            albumSongsList.innerHTML = `
-
-                <p>
-                    هنوز آهنگی برای این آلبوم
-                    ثبت نشده است.
-                </p>
-
-            `;
-
-
-            return;
-
-        }
-
-
-
-        /* =========================
-           CREATE SONG CARDS
-        ========================= */
-
-        songs.forEach(
-            function (song) {
 
 
                 const card =
-                    document.createElement(
-                        "article"
-                    );
+                    document.createElement("article");
 
 
                 card.className =
@@ -659,18 +316,10 @@ document.addEventListener(
                     <div class="music-cover">
 
                         <img
-                            src="${song.cover}"
-                            alt="${song.title}"
+                            src="${album.cover}"
+                            alt="${album.title}"
                             loading="lazy"
                         >
-
-                        <button
-                            class="play-button"
-                            type="button"
-                            aria-label="پخش ${song.title}"
-                        >
-                            ▶
-                        </button>
 
                     </div>
 
@@ -678,11 +327,16 @@ document.addEventListener(
                     <div class="music-info">
 
                         <h3>
-                            ${song.title}
+                            ${album.title}
                         </h3>
 
+
                         <p>
-                            ${artistName}
+                            ${
+                                artist
+                                    ? artist.name
+                                    : "نام خواننده"
+                            }
                         </p>
 
                     </div>
@@ -690,58 +344,10 @@ document.addEventListener(
                 `;
 
 
-
-                /* =========================
-                   PLAY SONG
-                ========================= */
-
-                const playButton =
-                    card.querySelector(
-                        ".play-button"
-                    );
-
-
-                playButton.addEventListener(
-                    "click",
-                    function (event) {
-
-                        event.stopPropagation();
-
-
-                        if (
-                            typeof loadSong ===
-                            "function" &&
-
-                            typeof playSong ===
-                            "function"
-                        ) {
-
-
-                            loadSong({
-
-                                ...song,
-
-                                artist:
-                                    artistName
-
-                            });
-
-
-                            playSong();
-
-                        }
-
-                    }
-                );
-
-
-                albumSongsList.appendChild(
-                    card
-                );
+                albumList.appendChild(card);
 
             }
         );
-
 
     }
 );
