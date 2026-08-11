@@ -107,7 +107,7 @@ class="search-button">
 
 
 <!-- =========================
-     ARTISTS
+     ARTIST PAGE
 ========================= -->
 
 <main>
@@ -118,6 +118,12 @@ class="search-button">
 <div class="container">
 
 
+<!-- =========================
+     ARTIST HEADER
+========================= -->
+
+<div id="artist-header">
+
 <div class="section-header">
 
 <div>
@@ -127,9 +133,20 @@ Artists
 </span>
 
 
-<h1>
+<h1 id="artist-page-title">
 خواننده‌های محبوب
 </h1>
+
+
+</div>
+
+
+<a href="artist.html"
+class="view-all">
+
+همه خواننده‌ها ←
+
+</a>
 
 
 </div>
@@ -146,6 +163,49 @@ Artists
 id="artist-list">
 
 </div>
+
+
+
+<!-- =========================
+     ARTIST SONGS
+========================= -->
+
+<section
+class="music-section"
+id="artist-songs-section"
+style="display:none;">
+
+<div class="container">
+
+
+<div class="section-header">
+
+<div>
+
+<span class="section-label">
+موسیقی
+</span>
+
+
+<h2 id="artist-songs-title">
+آهنگ‌های خواننده
+</h2>
+
+
+</div>
+
+</div>
+
+
+<div class="music-grid"
+id="artist-songs-list">
+
+</div>
+
+
+</div>
+
+</section>
 
 
 </div>
@@ -250,6 +310,7 @@ aria-label="آهنگ بعدی">
 <script src="js/main.js"></script>
 
 
+
 <!-- =========================
      ARTIST SYSTEM
 ========================= -->
@@ -260,61 +321,349 @@ document.addEventListener(
     "DOMContentLoaded",
     function () {
 
+
+        /* =========================
+           GET URL PARAMETER
+        ========================= */
+
+        const params =
+            new URLSearchParams(
+                window.location.search
+            );
+
+
+        const artistId =
+            params.get("artist");
+
+
         const artistList =
-            document.getElementById("artist-list");
+            document.getElementById(
+                "artist-list"
+            );
 
 
-        if (!artistList) {
+        const artistHeader =
+            document.getElementById(
+                "artist-header"
+            );
+
+
+        const artistTitle =
+            document.getElementById(
+                "artist-page-title"
+            );
+
+
+        const artistSongsSection =
+            document.getElementById(
+                "artist-songs-section"
+            );
+
+
+        const artistSongsTitle =
+            document.getElementById(
+                "artist-songs-title"
+            );
+
+
+        const artistSongsList =
+            document.getElementById(
+                "artist-songs-list"
+            );
+
+
+
+        /* =========================
+           NO ARTIST SELECTED
+           SHOW ALL ARTISTS
+        ========================= */
+
+        if (!artistId) {
+
+
+            const artists =
+                musicDatabase.artists;
+
+
+            artistList.innerHTML = "";
+
+
+            artists.forEach(
+                function (artist) {
+
+
+                    const card =
+                        document.createElement(
+                            "a"
+                        );
+
+
+                    card.className =
+                        "artist-card";
+
+
+                    card.href =
+                        "artist.html?artist=" +
+                        encodeURIComponent(
+                            artist.id
+                        );
+
+
+                    card.innerHTML = `
+
+                        <img
+                            src="${artist.image}"
+                            alt="${artist.name}"
+                            loading="lazy"
+                        >
+
+                        <h3>
+                            ${artist.name}
+                        </h3>
+
+                    `;
+
+
+                    artistList.appendChild(
+                        card
+                    );
+
+                }
+            );
+
 
             return;
 
         }
 
 
-        const artists =
-            musicDatabase.artists;
+
+        /* =========================
+           FIND SELECTED ARTIST
+        ========================= */
+
+        const artist =
+            musicDatabase.artists.find(
+                function (item) {
+
+                    return item.id === artistId;
+
+                }
+            );
 
 
-        artistList.innerHTML = "";
+
+        /* =========================
+           ARTIST NOT FOUND
+        ========================= */
+
+        if (!artist) {
 
 
-        artists.forEach(
-            function (artist) {
+            artistTitle.textContent =
+                "خواننده پیدا نشد";
+
+
+            artistList.innerHTML = `
+
+                <p>
+                    خواننده مورد نظر پیدا نشد.
+                </p>
+
+            `;
+
+
+            return;
+
+        }
+
+
+
+        /* =========================
+           UPDATE PAGE TITLE
+        ========================= */
+
+        document.title =
+            "BRICE MUSIC | " +
+            artist.name;
+
+
+        artistTitle.textContent =
+            artist.name;
+
+
+
+        /* =========================
+           HIDE ARTIST LIST
+        ========================= */
+
+        artistList.style.display =
+            "none";
+
+
+
+        /* =========================
+           FIND ARTIST SONGS
+        ========================= */
+
+        const songs =
+            musicDatabase.songs.filter(
+                function (song) {
+
+                    return (
+                        song.artistId ===
+                        artist.id
+                    );
+
+                }
+            );
+
+
+
+        /* =========================
+           SHOW SONG SECTION
+        ========================= */
+
+        artistSongsSection.style.display =
+            "block";
+
+
+        artistSongsTitle.textContent =
+            "آهنگ‌های " +
+            artist.name;
+
+
+        artistSongsList.innerHTML = "";
+
+
+
+        /* =========================
+           NO SONGS
+        ========================= */
+
+        if (songs.length === 0) {
+
+
+            artistSongsList.innerHTML = `
+
+                <p>
+                    هنوز آهنگی برای این خواننده
+                    ثبت نشده است.
+                </p>
+
+            `;
+
+
+            return;
+
+        }
+
+
+
+        /* =========================
+           CREATE SONG CARDS
+        ========================= */
+
+        songs.forEach(
+            function (song) {
 
 
                 const card =
-                    document.createElement("a");
+                    document.createElement(
+                        "article"
+                    );
 
 
                 card.className =
-                    "artist-card";
-
-
-                card.href =
-                    "artist.html?artist=" +
-                    encodeURIComponent(artist.id);
+                    "music-card";
 
 
                 card.innerHTML = `
 
-                    <img
-                        src="${artist.image}"
-                        alt="${artist.name}"
-                        loading="lazy"
-                    >
+                    <div class="music-cover">
+
+                        <img
+                            src="${song.cover}"
+                            alt="${song.title}"
+                            loading="lazy"
+                        >
+
+                        <button
+                            class="play-button"
+                            type="button"
+                            aria-label="پخش ${song.title}"
+                        >
+                            ▶
+                        </button>
+
+                    </div>
 
 
-                    <h3>
-                        ${artist.name}
-                    </h3>
+                    <div class="music-info">
+
+                        <h3>
+                            ${song.title}
+                        </h3>
+
+                        <p>
+                            ${artist.name}
+                        </p>
+
+                    </div>
 
                 `;
 
 
-                artistList.appendChild(card);
+
+                /* =========================
+                   PLAY SONG
+                ========================= */
+
+                const playButton =
+                    card.querySelector(
+                        ".play-button"
+                    );
+
+
+                playButton.addEventListener(
+                    "click",
+                    function () {
+
+
+                        if (
+                            typeof loadSong ===
+                            "function" &&
+
+                            typeof playSong ===
+                            "function"
+                        ) {
+
+
+                            loadSong({
+
+                                ...song,
+
+                                artist:
+                                    artist.name
+
+                            });
+
+
+                            playSong();
+
+                        }
+
+                    }
+                );
+
+
+                artistSongsList.appendChild(
+                    card
+                );
 
             }
         );
+
 
     }
 );
