@@ -224,7 +224,7 @@ artists: [
 
 
 {
-    id: "sirvan-hossein",
+    id: "mohsen-chavoshi",
 
     name: "محسن چاوشی",
 
@@ -271,8 +271,347 @@ artists: [
     description: "خواننده سبک رپ و هیپ‌هاپ",
 
     isPopular: true
-}
+},
 
+
+   {
+    id: "amir-tataloo",
+
+    name: "امیر تتلو",
+
+    slug: "amir-tataloo",
+
+    image: "images/artists/amir-tataloo.jpg",
+
+    genre: "rap",
+
+    description: "خواننده و هنرمند سبک رپ و هیپ‌هاپ",
+
+    isPopular: true
+},
+
+
+{
+    id: "sasy",
+
+    name: "ساسی",
+
+    slug: "sasy",
+
+    image: "images/artists/sasy.jpg",
+
+    genre: "pop",
+
+    description: "خواننده موسیقی پاپ و شاد",
+
+    isPopular: true
+},
+
+
+{
+    id: "tohi",
+
+    name: "حسین تهی",
+
+    slug: "tohi",
+
+    image: "images/artists/tohi.jpg",
+
+    genre: "rap",
+
+    description: "خواننده و هنرمند سبک رپ و هیپ‌هاپ",
+
+    isPopular: true
+},
+
+
+{
+    id: "yas",
+
+    name: "یاس",
+
+    slug: "yas",
+
+    image: "images/artists/yas.jpg",
+
+    genre: "rap",
+
+    description: "خواننده و پیشگام موسیقی رپ فارسی",
+
+    isPopular: true
+},
+
+
+{
+    id: "reza-pishro",
+
+    name: "رضا پیشرو",
+
+    slug: "reza-pishro",
+
+    image: "images/artists/reza-pishro.jpg",
+
+    genre: "rap",
+
+    description: "خواننده و هنرمند سبک رپ فارسی",
+
+    isPopular: true
+},
+
+
+{
+    id: "ho3ein",
+
+    name: "حصین",
+
+    slug: "ho3ein",
+
+    image: "images/artists/ho3ein.jpg",
+
+    genre: "rap",
+
+    description: "خواننده و هنرمند موسیقی رپ فارسی",
+
+    isPopular: true
+},
+
+
+{
+    id: "shervin-hajipour",
+
+    name: "شروین حاجی‌پور",
+
+    slug: "shervin-hajipour",
+
+    image: "images/artists/shervin-hajipour.jpg",
+
+    genre: "pop",
+
+    description: "خواننده و ترانه‌سرای موسیقی پاپ",
+
+    isPopular: true
+},
+
+
+{
+    id: "shadmehr-aghili",
+
+    name: "شادمهر عقیلی",
+
+    slug: "shadmehr-aghili",
+
+    image: "images/artists/shadmehr-aghili.jpg",
+
+    genre: "pop",
+
+    description: "خواننده، آهنگساز و نوازنده موسیقی پاپ",
+
+    isPopular: true
+},
+
+
+{
+    id: "majid-razavi",
+
+    name: "مجید رضوی",
+
+    slug: "majid-razavi",
+
+    image: "images/artists/majid-razavi.jpg",
+
+    genre: "pop",
+
+    description: "خواننده موسیقی پاپ",
+
+    isPopular: true
+},
+
+
+{
+    id: "behnam-bani",
+
+    name: "بهنام بانی",
+
+    slug: "behnam-bani",
+
+    image: "images/artists/behnam-bani.jpg",
+
+    genre: "pop",
+
+    description: "خواننده موسیقی پاپ",
+
+    isPopular: true
+},
+
+
+{
+    id: "erfan-tahmasbi",
+
+    name: "عرفان طهماسبی",
+
+    slug: "erfan-tahmasbi",
+
+    image: "images/artists/erfan-tahmasbi.jpg",
+
+    genre: "pop",
+
+    description: "خواننده موسیقی پاپ و تلفیقی",
+
+    isPopular: true
+},
+
+
+{
+    id: "sami-beigi",
+
+    name: "سامـی بیگی",
+
+    slug: "sami-beigi",
+
+    image: "images/artists/sami-beigi.jpg",
+
+    genre: "pop",
+
+    description: "خواننده و هنرمند موسیقی پاپ",
+
+    isPopular: true
+},
+
+
+{
+    id: "arash",
+
+    name: "آرش",
+
+    slug: "arash",
+
+    image: "images/artists/arash.jpg",
+
+    genre: "pop",
+
+    description: "خواننده و تهیه‌کننده موسیقی پاپ",
+
+    isPopular: true
+},
+
+
+{
+    id: "koorosh",
+
+    name: "کوروش",
+
+    slug: "koorosh",
+
+    image: "images/artists/koorosh.jpg",
+
+    genre: "rap",
+
+    description: "خواننده و هنرمند سبک رپ و هیپ‌هاپ",
+
+    isPopular: true
+},
+
+
+{
+    id: "sijal",
+
+    name: "سیجل",
+
+    slug: "sijal",
+
+    image: "images/artists/sijal.jpg",
+
+    genre: "rap",
+
+    description: "خواننده و هنرمند موسیقی رپ فارسی",
+
+    isPopular: true
+},
+
+
+{
+    id: "behzad-leito",
+
+    name: "بهزاد لیتو",
+
+    slug: "behzad-leito",
+
+    image: "images/artists/behzad-leito.jpg",
+
+    genre: "rap",
+
+    description: "خواننده و هنرمند سبک رپ و هیپ‌هاپ",
+
+    isPopular: true
+},
+
+
+{
+    id: "hiphopologist",
+
+    name: "هیپهاپولوژیست",
+
+    slug: "hiphopologist",
+
+    image: "images/artists/hiphopologist.jpg",
+
+    genre: "rap",
+
+    description: "خواننده و هنرمند موسیقی رپ فارسی",
+
+    isPopular: true
+},
+
+
+{
+    id: "ali-sorena",
+
+    name: "علی سورنا",
+
+    slug: "ali-sorena",
+
+    image: "images/artists/ali-sorena.jpg",
+
+    genre: "rap",
+
+    description: "خواننده و ترانه‌سرای موسیقی رپ فارسی",
+
+    isPopular: true
+},
+
+
+{
+    id: "hichkas",
+
+    name: "هیچکس",
+
+    slug: "hichkas",
+
+    image: "images/artists/hichkas.jpg",
+
+    genre: "rap",
+
+    description: "خواننده و از چهره‌های تأثیرگذار رپ فارسی",
+
+    isPopular: true
+},
+
+
+{
+    id: "zebazi",
+
+    name: "زدبازی",
+
+    slug: "zebazi",
+
+    image: "images/artists/zebazi.jpg",
+
+    genre: "rap",
+
+    description: "گروه موسیقی رپ و هیپ‌هاپ فارسی",
+
+    isPopular: true
+}
 ],
 
 /* =========================
