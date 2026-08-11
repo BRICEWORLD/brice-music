@@ -8,15 +8,12 @@
 <meta name="viewport"
       content="width=device-width, initial-scale=1.0">
 
-
 <title>
 BRICE MUSIC | آلبوم‌ها
 </title>
 
-
 <meta name="description"
       content="جدیدترین آلبوم‌های موسیقی در BRICE MUSIC">
-
 
 <link rel="stylesheet"
       href="css/style.css">
@@ -27,15 +24,12 @@ BRICE MUSIC | آلبوم‌ها
 <link rel="stylesheet"
       href="css/player.css">
 
-
 <link rel="manifest"
       href="manifest.json">
-
 
 <link rel="icon"
       type="image/png"
       href="images/favicon.png">
-
 
 <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700;800&display=swap"
       rel="stylesheet">
@@ -76,22 +70,18 @@ BRICE MUSIC | آلبوم‌ها
                 خانه
             </a>
 
-
             <a href="music.html">
                 آهنگ‌ها
             </a>
-
 
             <a href="artist.html">
                 خواننده‌ها
             </a>
 
-
             <a href="album.html"
                class="active">
                 آلبوم‌ها
             </a>
-
 
             <a href="category.html">
                 دسته‌بندی
@@ -102,7 +92,8 @@ BRICE MUSIC | آلبوم‌ها
 
 
         <a href="search.html"
-           class="search-button">
+           class="search-button"
+           aria-label="جستجو">
 
             🔍
 
@@ -112,7 +103,6 @@ BRICE MUSIC | آلبوم‌ها
     </div>
 
 </header>
-
 
 
 
@@ -140,23 +130,37 @@ BRICE MUSIC | آلبوم‌ها
                     Albums
                 </span>
 
-
                 <h1 id="album-page-title">
                     آلبوم‌های موسیقی
                 </h1>
 
             </div>
 
+
+            <a href="album.html"
+               id="all-albums-link"
+               class="view-all">
+
+                همه آلبوم‌ها ←
+
+            </a>
+
         </div>
 
 
 
         <!-- =========================
-             ALBUM LIST
+             ALBUM CONTENT
         ========================= -->
 
-        <div class="music-grid"
-             id="album-list">
+        <div id="album-content">
+
+
+            <div class="music-grid"
+                 id="album-list">
+
+            </div>
+
 
         </div>
 
@@ -167,7 +171,6 @@ BRICE MUSIC | آلبوم‌ها
 
 
 </main>
-
 
 
 
@@ -197,7 +200,6 @@ BRICE MUSIC | آلبوم‌ها
                 <h4>
                     آهنگ انتخاب نشده
                 </h4>
-
 
                 <span>
                     BRICE MUSIC
@@ -250,7 +252,6 @@ BRICE MUSIC | آلبوم‌ها
 
 
 
-
 <!-- =========================
      JAVASCRIPT
 ========================= -->
@@ -292,6 +293,12 @@ document.addEventListener(
             );
 
 
+        const allAlbumsLink =
+            document.getElementById(
+                "all-albums-link"
+            );
+
+
 
         if (!albumList) {
 
@@ -302,7 +309,7 @@ document.addEventListener(
 
 
         /* =========================
-           GET ALBUM ID
+           URL PARAMETER
         ========================= */
 
         const params =
@@ -317,16 +324,24 @@ document.addEventListener(
 
 
         /* =========================
-           GET ALBUMS
+           DATABASE
         ========================= */
 
         const albums =
             musicDatabase.albums || [];
 
 
+        const songs =
+            musicDatabase.songs || [];
+
+
+        const artists =
+            musicDatabase.artists || [];
+
+
 
         /* =========================
-           NO ALBUMS
+           NO ALBUM DATA
         ========================= */
 
         if (albums.length === 0) {
@@ -345,12 +360,16 @@ document.addEventListener(
 
 
 
-        /* =========================
-           SINGLE ALBUM
-        ========================= */
+        /* =====================================================
+           SINGLE ALBUM PAGE
+        ===================================================== */
 
         if (albumId) {
 
+
+            /* =========================
+               FIND ALBUM
+            ========================= */
 
             const album =
                 albums.find(
@@ -369,6 +388,7 @@ document.addEventListener(
 
             if (!album) {
 
+
                 albumTitle.textContent =
                     "آلبوم پیدا نشد";
 
@@ -381,6 +401,7 @@ document.addEventListener(
 
                 `;
 
+
                 return;
 
             }
@@ -392,7 +413,7 @@ document.addEventListener(
             ========================= */
 
             const artist =
-                musicDatabase.artists.find(
+                artists.find(
                     function (item) {
 
                         return (
@@ -427,11 +448,25 @@ document.addEventListener(
 
 
             /* =========================
-               FIND SONGS
+               HIDE ALL ALBUM LINK
+               ON DETAIL PAGE
             ========================= */
 
-            const songs =
-                musicDatabase.songs.filter(
+            if (allAlbumsLink) {
+
+                allAlbumsLink.style.display =
+                    "inline-flex";
+
+            }
+
+
+
+            /* =========================
+               FIND ALBUM SONGS
+            ========================= */
+
+            const albumSongs =
+                songs.filter(
                     function (song) {
 
                         return (
@@ -445,7 +480,7 @@ document.addEventListener(
 
 
             /* =========================
-               ALBUM CARD
+               ALBUM DETAIL CARD
             ========================= */
 
             albumList.innerHTML = `
@@ -459,13 +494,13 @@ document.addEventListener(
                         <img
                             src="${album.cover}"
                             alt="${album.title}"
-                            loading="lazy"
-                        >
+                            loading="lazy">
 
                     </div>
 
 
                     <div class="music-info">
+
 
                         <h3>
                             ${album.title}
@@ -473,13 +508,27 @@ document.addEventListener(
 
 
                         <p>
-                            ${artistName}
+
+                            <a
+                                href="artist.html?artist=${encodeURIComponent(album.artistId)}"
+                                class="album-artist-link">
+
+                                ${artistName}
+
+                            </a>
+
+                        </p>
+
+
+                        <p>
+                            ${album.description || ""}
                         </p>
 
 
                         <p>
                             ${album.year || ""}
                         </p>
+
 
                     </div>
 
@@ -491,110 +540,157 @@ document.addEventListener(
 
 
             /* =========================
-               ALBUM SONGS
+               SONG SECTION HEADER
             ========================= */
 
-            if (songs.length > 0) {
-
-
-                const songsTitle =
-                    document.createElement(
-                        "div"
-                    );
-
-
-                songsTitle.className =
-                    "section-header";
-
-
-                songsTitle.innerHTML = `
-
-                    <div>
-
-                        <span class="section-label">
-                            موسیقی
-                        </span>
-
-                        <h2>
-                            آهنگ‌های ${album.title}
-                        </h2>
-
-                    </div>
-
-                `;
-
-
-                albumList.appendChild(
-                    songsTitle
+            const songsHeader =
+                document.createElement(
+                    "div"
                 );
 
 
-
-                songs.forEach(
-                    function (song) {
-
-
-                        const card =
-                            document.createElement(
-                                "article"
-                            );
+            songsHeader.className =
+                "section-header album-songs-header";
 
 
-                        card.className =
-                            "music-card";
+            songsHeader.innerHTML = `
+
+                <div>
+
+                    <span class="section-label">
+                        Music
+                    </span>
 
 
+                    <h2>
+                        آهنگ‌های ${album.title}
+                    </h2>
 
-                        card.innerHTML = `
+                </div>
 
-                            <div class="music-cover">
-
-                                <img
-                                    src="${song.cover}"
-                                    alt="${song.title}"
-                                    loading="lazy"
-                                >
+            `;
 
 
-                                <button
-                                    class="play-button"
-                                    type="button"
-                                    aria-label="پخش ${song.title}">
-
-                                    ▶
-
-                                </button>
-
-                            </div>
-
-
-                            <div class="music-info">
-
-                                <h3>
-                                    ${song.title}
-                                </h3>
-
-
-                                <p>
-                                    ${artistName}
-                                </p>
-
-                            </div>
-
-                        `;
+            albumList.appendChild(
+                songsHeader
+            );
 
 
 
-                        const playButton =
-                            card.querySelector(
-                                ".play-button"
-                            );
+            /* =========================
+               NO SONGS
+            ========================= */
 
+            if (albumSongs.length === 0) {
+
+
+                const emptyMessage =
+                    document.createElement(
+                        "p"
+                    );
+
+
+                emptyMessage.textContent =
+                    "هنوز آهنگی برای این آلبوم ثبت نشده است.";
+
+
+                albumList.appendChild(
+                    emptyMessage
+                );
+
+
+                return;
+
+            }
+
+
+
+            /* =========================
+               CREATE SONG CARDS
+            ========================= */
+
+            albumSongs.forEach(
+                function (song) {
+
+
+                    const card =
+                        document.createElement(
+                            "article"
+                        );
+
+
+                    card.className =
+                        "music-card";
+
+
+
+                    card.innerHTML = `
+
+                        <div class="music-cover">
+
+
+                            <img
+                                src="${song.cover}"
+                                alt="${song.title}"
+                                loading="lazy">
+
+
+                            <button
+                                class="play-button"
+                                type="button"
+                                aria-label="پخش ${song.title}">
+
+                                ▶
+
+                            </button>
+
+
+                        </div>
+
+
+
+                        <div class="music-info">
+
+
+                            <h3>
+                                ${song.title}
+                            </h3>
+
+
+                            <p>
+                                ${artistName}
+                            </p>
+
+
+                        </div>
+
+                    `;
+
+
+
+                    /* =========================
+                       PLAY BUTTON
+                    ========================= */
+
+                    const playButton =
+                        card.querySelector(
+                            ".play-button"
+                        );
+
+
+                    if (playButton) {
 
 
                         playButton.addEventListener(
                             "click",
-                            function () {
+                            function (event) {
+
+
+                                event.preventDefault();
+
+
+                                event.stopPropagation();
+
 
 
                                 if (
@@ -623,35 +719,16 @@ document.addEventListener(
                             }
                         );
 
-
-
-                        albumList.appendChild(
-                            card
-                        );
-
                     }
-                );
 
 
-            } else {
 
-
-                const emptyMessage =
-                    document.createElement(
-                        "p"
+                    albumList.appendChild(
+                        card
                     );
 
-
-                emptyMessage.textContent =
-                    "هنوز آهنگی برای این آلبوم ثبت نشده است.";
-
-
-                albumList.appendChild(
-                    emptyMessage
-                );
-
-            }
-
+                }
+            );
 
 
             return;
@@ -660,9 +737,10 @@ document.addEventListener(
 
 
 
-        /* =========================
-           SHOW ALL ALBUMS
-        ========================= */
+        /* =====================================================
+           ALL ALBUMS PAGE
+        ===================================================== */
+
 
         albumTitle.textContent =
             "آلبوم‌های موسیقی";
@@ -671,6 +749,10 @@ document.addEventListener(
         albumList.innerHTML = "";
 
 
+
+        /* =========================
+           CREATE ALBUM CARDS
+        ========================= */
 
         albums.forEach(
             function (album) {
@@ -681,7 +763,7 @@ document.addEventListener(
                 ========================= */
 
                 const artist =
-                    musicDatabase.artists.find(
+                    artists.find(
                         function (item) {
 
                             return (
@@ -702,7 +784,7 @@ document.addEventListener(
 
 
                 /* =========================
-                   CREATE ALBUM CARD
+                   CREATE CARD
                 ========================= */
 
                 const card =
@@ -727,16 +809,19 @@ document.addEventListener(
 
                     <div class="music-cover">
 
+
                         <img
                             src="${album.cover}"
                             alt="${album.title}"
-                            loading="lazy"
-                        >
+                            loading="lazy">
+
 
                     </div>
 
 
+
                     <div class="music-info">
+
 
                         <h3>
                             ${album.title}
@@ -746,6 +831,12 @@ document.addEventListener(
                         <p>
                             ${artistName}
                         </p>
+
+
+                        <small>
+                            ${album.year || ""}
+                        </small>
+
 
                     </div>
 
@@ -765,6 +856,7 @@ document.addEventListener(
 );
 
 </script>
+
 
 
 </body>
