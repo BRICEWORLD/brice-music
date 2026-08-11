@@ -890,7 +890,7 @@ albums: [
         genre: "rap",
 
         isFeatured: true
-    }
+    },
 
    
 /* =========================
