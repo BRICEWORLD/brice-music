@@ -155,13 +155,12 @@ function createMusicCard(song) {
                 loading="lazy"
             >
 
-            <button
-                class="play-button"
-                type="button"
-                aria-label="پخش ${song.title}"
-            >
-                ▶
-            </button>
+            <a
+ class="music-button"
+ href="song.html?id=${song.id}"
+>
+🎧 مشاهده آهنگ
+</a>
 
         </div>
 
@@ -181,33 +180,7 @@ function createMusicCard(song) {
     `;
 
 
-    const playButton =
-        article.querySelector(".play-button");
-
-
-    playButton.addEventListener(
-        "click",
-        function () {
-
-            if (
-                typeof loadSong === "function" &&
-                typeof playSong === "function"
-            ) {
-
-                loadSong({
-
-                    ...song,
-
-                    artist: artistName
-
-                });
-
-                playSong();
-
-            }
-
-        }
-    );
+    
 
 
     return article;
@@ -272,13 +245,12 @@ function createPopularItem(song, index) {
         </span>
 
 
-        <button
-            class="small-play"
-            type="button"
-            aria-label="پخش ${song.title}"
-        >
-            ▶
-        </button>
+        <a
+class="small-link"
+href="song.html?id=${song.id}"
+>
+🎧
+</a>
 
     `;
 
@@ -286,35 +258,6 @@ function createPopularItem(song, index) {
     const playButton =
         item.querySelector(".small-play");
 
-
-    playButton.addEventListener(
-        "click",
-        function () {
-
-            if (
-                typeof loadSong === "function" &&
-                typeof playSong === "function"
-            ) {
-
-                loadSong({
-
-                    ...song,
-
-                    artist: artistName
-
-                });
-
-                playSong();
-
-            }
-
-        }
-    );
-
-
-    return item;
-
-}
 
 
 // =======================================
