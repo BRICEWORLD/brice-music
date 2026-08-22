@@ -135,7 +135,7 @@ function getArtistName(song) {
 function createMusicCard(song) {
 
     const artistName =
-        getArtistName(song)
+    getArtistName(song);
 
 
     const article =
@@ -222,7 +222,7 @@ function createMusicCard(song) {
 function createPopularItem(song, index) {
 
     const artistName =
-        getArtistName(song)
+    getArtistName(song);
 
 
     const item =
