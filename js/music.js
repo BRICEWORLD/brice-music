@@ -104,19 +104,29 @@ function getLatestSongs() {
 // GET ARTIST NAME
 // =======================================
 
-function getArtistName(artistId) {
+function getArtistName(song) {
+
+
+    if(song.artist){
+
+        return song.artist;
+
+    }
+
+
 
     const artist =
         musicDatabase.artists.find(
-            artist => artist.id === artistId
+            artist => artist.id === song.artistId
         );
+
 
     return artist
         ? artist.name
         : "نام خواننده";
 
-}
 
+}
 
 // =======================================
 // CREATE MUSIC CARD
@@ -125,7 +135,7 @@ function getArtistName(artistId) {
 function createMusicCard(song) {
 
     const artistName =
-        getArtistName(song.artistId);
+        getArtistName(song)
 
 
     const article =
@@ -212,7 +222,7 @@ function createMusicCard(song) {
 function createPopularItem(song, index) {
 
     const artistName =
-        getArtistName(song.artistId);
+        getArtistName(song)
 
 
     const item =
