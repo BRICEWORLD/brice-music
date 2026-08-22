@@ -252,12 +252,7 @@ href="song.html?id=${song.id}"
 🎧
 </a>
 
-
-    item.innerHTML = `
-
-        ...
-
-    `;
+ `;
 
 
     return item;
