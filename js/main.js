@@ -191,8 +191,8 @@ function createMusicCards() {
 
                     <p>
                         ${getArtistName(
-                            song.artistId
-                        )}
+    song
+)}
                     </p>
 
                 </div>
@@ -213,9 +213,9 @@ function createMusicCards() {
                     playSelectedSong({
                         ...song,
                         artist:
-                            getArtistName(
-                                song.artistId
-                            )
+    getArtistName(
+        song
+    )
                     });
 
                 }
