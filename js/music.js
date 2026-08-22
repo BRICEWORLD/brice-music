@@ -252,13 +252,17 @@ href="song.html?id=${song.id}"
 🎧
 </a>
 
+
+    item.innerHTML = `
+
+        ...
+
     `;
 
 
-    const playButton =
-        item.querySelector(".small-play");
+    return item;
 
-
+}
 
 // =======================================
 // RENDER MUSIC LIST
