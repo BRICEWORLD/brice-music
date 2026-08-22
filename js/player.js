@@ -1,5 +1,6 @@
 // =======================================
 // BRICE MUSIC PLAYER
+// LINK BASED PLAYER
 // =======================================
 
 
@@ -10,13 +11,20 @@ let isPlaying = false;
 
 
 let currentSong = {
+
     title: "آهنگ انتخاب نشده",
+
     artist: "BRICE MUSIC",
+
     cover: "images/music/music-01.jpg",
-    file: ""
+
+    play: ""
+
 };
 
 
+
+// ELEMENTS
 
 const playButton =
 document.querySelector(".main-play");
@@ -35,26 +43,62 @@ document.querySelector(".player-song span");
 
 
 
+
+
+// =======================================
+// LOAD SONG
+// =======================================
+
 function loadSong(song){
+
 
     currentSong = song;
 
-    audio.src = song.file || song.audio;
 
-    cover.src = song.cover;
+    audio.src =
+    song.play || "";
 
-    songTitle.textContent = song.title;
 
-    artistName.textContent =
-    typeof getArtistName === "function"
-        ? getArtistName(song.artistId)
-        : "نام خواننده";
+
+    if(cover){
+
+        cover.src =
+        song.cover;
+
+    }
+
+
+
+    if(songTitle){
+
+        songTitle.textContent =
+        song.title;
+
+    }
+
+
+
+    if(artistName){
+
+        artistName.textContent =
+        song.artist ||
+        "BRICE MUSIC";
+
+    }
+
 
 }
 
 
 
+
+
+// =======================================
+// PLAY
+// =======================================
+
 function playSong(){
+
 
     if(!audio.src){
 
@@ -65,74 +109,131 @@ function playSong(){
 
     audio.play();
 
+
+
     isPlaying = true;
 
 
-    document
-    .querySelector(".music-player")
-    .classList.add("is-playing");
+
+    const player =
+    document.querySelector(".music-player");
 
 
-    playButton.textContent = "⏸";
+    if(player){
+
+        player.classList.add(
+            "is-playing"
+        );
+
+    }
+
+
+
+    if(playButton){
+
+        playButton.textContent =
+        "⏸";
+
+    }
+
 
 }
 
 
 
+
+
+// =======================================
+// PAUSE
+// =======================================
+
 function pauseSong(){
 
+
     audio.pause();
+
+
 
     isPlaying = false;
 
 
-    document
-    .querySelector(".music-player")
-    .classList.remove("is-playing");
+
+    const player =
+    document.querySelector(".music-player");
 
 
-    playButton.textContent = "▶";
+    if(player){
+
+        player.classList.remove(
+            "is-playing"
+        );
+
+    }
+
+
+
+    if(playButton){
+
+        playButton.textContent =
+        "▶";
+
+    }
+
 
 }
 
 
+
+
+
+// =======================================
+// MAIN BUTTON
+// =======================================
 
 if(playButton){
 
-    playButton.addEventListener(
-        "click",
-        ()=>{
 
-            if(isPlaying){
+playButton.addEventListener(
+"click",
+()=>{
 
-                pauseSong();
 
-            }else{
+    if(isPlaying){
 
-                playSong();
+        pauseSong();
 
-            }
+    }
 
-        }
-    );
+    else{
+
+        playSong();
+
+    }
+
+
+});
+
 
 }
 
 
 
 
-// آماده سازی اولیه پلیر
 
-if(typeof musicDatabase !== "undefined"){
+// =======================================
+// AUTO LOAD FIRST SONG
+// =======================================
 
-    const firstSong =
-    musicDatabase.songs[0];
+if(
+typeof musicDatabase !== "undefined" &&
+musicDatabase.songs &&
+musicDatabase.songs.length
+){
 
 
-    if(firstSong){
+    loadSong(
+        musicDatabase.songs[0]
+    );
 
-        loadSong(firstSong);
-
-    }
 
 }
