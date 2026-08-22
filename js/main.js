@@ -306,8 +306,8 @@ function createPopularMusic() {
 
                     <p>
                         ${getArtistName(
-                            song.artistId
-                        )}
+    song
+)}
                     </p>
 
                 </div>
@@ -342,9 +342,7 @@ function createPopularMusic() {
                     playSelectedSong({
                         ...song,
                         artist:
-                            getArtistName(
-                                song.artistId
-                            )
+                            getArtistName(song)
                     });
 
                 }
